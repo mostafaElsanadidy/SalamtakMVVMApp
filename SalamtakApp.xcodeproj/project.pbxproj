@@ -1,0 +1,618 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EDD56981292A1FC50066236B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD56980292A1FC50066236B /* AppDelegate.swift */; };
+		EDD56983292A1FC50066236B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD56982292A1FC50066236B /* SceneDelegate.swift */; };
+		EDD56985292A1FC50066236B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD56984292A1FC50066236B /* ViewController.swift */; };
+		EDD56988292A1FC50066236B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDD56986292A1FC50066236B /* Main.storyboard */; };
+		EDD5698B292A1FC50066236B /* SalamtakApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EDD56989292A1FC50066236B /* SalamtakApp.xcdatamodeld */; };
+		EDD5698D292A1FC80066236B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDD5698C292A1FC80066236B /* Assets.xcassets */; };
+		EDD56990292A1FC80066236B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDD5698E292A1FC80066236B /* LaunchScreen.storyboard */; };
+		EDD5699B292A1FC90066236B /* SalamtakAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD5699A292A1FC90066236B /* SalamtakAppTests.swift */; };
+		EDD569A5292A1FC90066236B /* SalamtakAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD569A4292A1FC90066236B /* SalamtakAppUITests.swift */; };
+		EDD569A7292A1FC90066236B /* SalamtakAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD569A6292A1FC90066236B /* SalamtakAppUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EDD56997292A1FC90066236B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDD56975292A1FC50066236B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EDD5697C292A1FC50066236B;
+			remoteInfo = SalamtakApp;
+		};
+		EDD569A1292A1FC90066236B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDD56975292A1FC50066236B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EDD5697C292A1FC50066236B;
+			remoteInfo = SalamtakApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EDD5697D292A1FC50066236B /* SalamtakApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SalamtakApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDD56980292A1FC50066236B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EDD56982292A1FC50066236B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EDD56984292A1FC50066236B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EDD56987292A1FC50066236B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EDD5698A292A1FC50066236B /* SalamtakApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SalamtakApp.xcdatamodel; sourceTree = "<group>"; };
+		EDD5698C292A1FC80066236B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EDD5698F292A1FC80066236B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EDD56991292A1FC80066236B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDD56996292A1FC90066236B /* SalamtakAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SalamtakAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDD5699A292A1FC90066236B /* SalamtakAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalamtakAppTests.swift; sourceTree = "<group>"; };
+		EDD569A0292A1FC90066236B /* SalamtakAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SalamtakAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDD569A4292A1FC90066236B /* SalamtakAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalamtakAppUITests.swift; sourceTree = "<group>"; };
+		EDD569A6292A1FC90066236B /* SalamtakAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalamtakAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EDD5697A292A1FC50066236B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDD56993292A1FC90066236B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDD5699D292A1FC90066236B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EDD56974292A1FC50066236B = {
+			isa = PBXGroup;
+			children = (
+				EDD5697F292A1FC50066236B /* SalamtakApp */,
+				EDD56999292A1FC90066236B /* SalamtakAppTests */,
+				EDD569A3292A1FC90066236B /* SalamtakAppUITests */,
+				EDD5697E292A1FC50066236B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EDD5697E292A1FC50066236B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EDD5697D292A1FC50066236B /* SalamtakApp.app */,
+				EDD56996292A1FC90066236B /* SalamtakAppTests.xctest */,
+				EDD569A0292A1FC90066236B /* SalamtakAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EDD5697F292A1FC50066236B /* SalamtakApp */ = {
+			isa = PBXGroup;
+			children = (
+				EDD56980292A1FC50066236B /* AppDelegate.swift */,
+				EDD56982292A1FC50066236B /* SceneDelegate.swift */,
+				EDD56984292A1FC50066236B /* ViewController.swift */,
+				EDD56986292A1FC50066236B /* Main.storyboard */,
+				EDD5698C292A1FC80066236B /* Assets.xcassets */,
+				EDD5698E292A1FC80066236B /* LaunchScreen.storyboard */,
+				EDD56991292A1FC80066236B /* Info.plist */,
+				EDD56989292A1FC50066236B /* SalamtakApp.xcdatamodeld */,
+			);
+			path = SalamtakApp;
+			sourceTree = "<group>";
+		};
+		EDD56999292A1FC90066236B /* SalamtakAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				EDD5699A292A1FC90066236B /* SalamtakAppTests.swift */,
+			);
+			path = SalamtakAppTests;
+			sourceTree = "<group>";
+		};
+		EDD569A3292A1FC90066236B /* SalamtakAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EDD569A4292A1FC90066236B /* SalamtakAppUITests.swift */,
+				EDD569A6292A1FC90066236B /* SalamtakAppUITestsLaunchTests.swift */,
+			);
+			path = SalamtakAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EDD5697C292A1FC50066236B /* SalamtakApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDD569AA292A1FC90066236B /* Build configuration list for PBXNativeTarget "SalamtakApp" */;
+			buildPhases = (
+				EDD56979292A1FC50066236B /* Sources */,
+				EDD5697A292A1FC50066236B /* Frameworks */,
+				EDD5697B292A1FC50066236B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SalamtakApp;
+			productName = SalamtakApp;
+			productReference = EDD5697D292A1FC50066236B /* SalamtakApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EDD56995292A1FC90066236B /* SalamtakAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDD569AD292A1FC90066236B /* Build configuration list for PBXNativeTarget "SalamtakAppTests" */;
+			buildPhases = (
+				EDD56992292A1FC90066236B /* Sources */,
+				EDD56993292A1FC90066236B /* Frameworks */,
+				EDD56994292A1FC90066236B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EDD56998292A1FC90066236B /* PBXTargetDependency */,
+			);
+			name = SalamtakAppTests;
+			productName = SalamtakAppTests;
+			productReference = EDD56996292A1FC90066236B /* SalamtakAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EDD5699F292A1FC90066236B /* SalamtakAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDD569B0292A1FC90066236B /* Build configuration list for PBXNativeTarget "SalamtakAppUITests" */;
+			buildPhases = (
+				EDD5699C292A1FC90066236B /* Sources */,
+				EDD5699D292A1FC90066236B /* Frameworks */,
+				EDD5699E292A1FC90066236B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EDD569A2292A1FC90066236B /* PBXTargetDependency */,
+			);
+			name = SalamtakAppUITests;
+			productName = SalamtakAppUITests;
+			productReference = EDD569A0292A1FC90066236B /* SalamtakAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EDD56975292A1FC50066236B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					EDD5697C292A1FC50066236B = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					EDD56995292A1FC90066236B = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = EDD5697C292A1FC50066236B;
+					};
+					EDD5699F292A1FC90066236B = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = EDD5697C292A1FC50066236B;
+					};
+				};
+			};
+			buildConfigurationList = EDD56978292A1FC50066236B /* Build configuration list for PBXProject "SalamtakApp" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EDD56974292A1FC50066236B;
+			productRefGroup = EDD5697E292A1FC50066236B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EDD5697C292A1FC50066236B /* SalamtakApp */,
+				EDD56995292A1FC90066236B /* SalamtakAppTests */,
+				EDD5699F292A1FC90066236B /* SalamtakAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EDD5697B292A1FC50066236B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDD56990292A1FC80066236B /* LaunchScreen.storyboard in Resources */,
+				EDD5698D292A1FC80066236B /* Assets.xcassets in Resources */,
+				EDD56988292A1FC50066236B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDD56994292A1FC90066236B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDD5699E292A1FC90066236B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EDD56979292A1FC50066236B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDD56985292A1FC50066236B /* ViewController.swift in Sources */,
+				EDD56981292A1FC50066236B /* AppDelegate.swift in Sources */,
+				EDD56983292A1FC50066236B /* SceneDelegate.swift in Sources */,
+				EDD5698B292A1FC50066236B /* SalamtakApp.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDD56992292A1FC90066236B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDD5699B292A1FC90066236B /* SalamtakAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDD5699C292A1FC90066236B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDD569A7292A1FC90066236B /* SalamtakAppUITestsLaunchTests.swift in Sources */,
+				EDD569A5292A1FC90066236B /* SalamtakAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EDD56998292A1FC90066236B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EDD5697C292A1FC50066236B /* SalamtakApp */;
+			targetProxy = EDD56997292A1FC90066236B /* PBXContainerItemProxy */;
+		};
+		EDD569A2292A1FC90066236B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EDD5697C292A1FC50066236B /* SalamtakApp */;
+			targetProxy = EDD569A1292A1FC90066236B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EDD56986292A1FC50066236B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDD56987292A1FC50066236B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EDD5698E292A1FC80066236B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDD5698F292A1FC80066236B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EDD569A8292A1FC90066236B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EDD569A9292A1FC90066236B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EDD569AB292A1FC90066236B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SalamtakApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.68lion.SalamtakApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EDD569AC292A1FC90066236B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SalamtakApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.68lion.SalamtakApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EDD569AE292A1FC90066236B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.68lion.SalamtakAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SalamtakApp.app/SalamtakApp";
+			};
+			name = Debug;
+		};
+		EDD569AF292A1FC90066236B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.68lion.SalamtakAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SalamtakApp.app/SalamtakApp";
+			};
+			name = Release;
+		};
+		EDD569B1292A1FC90066236B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.68lion.SalamtakAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SalamtakApp;
+			};
+			name = Debug;
+		};
+		EDD569B2292A1FC90066236B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.68lion.SalamtakAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SalamtakApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EDD56978292A1FC50066236B /* Build configuration list for PBXProject "SalamtakApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDD569A8292A1FC90066236B /* Debug */,
+				EDD569A9292A1FC90066236B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDD569AA292A1FC90066236B /* Build configuration list for PBXNativeTarget "SalamtakApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDD569AB292A1FC90066236B /* Debug */,
+				EDD569AC292A1FC90066236B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDD569AD292A1FC90066236B /* Build configuration list for PBXNativeTarget "SalamtakAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDD569AE292A1FC90066236B /* Debug */,
+				EDD569AF292A1FC90066236B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDD569B0292A1FC90066236B /* Build configuration list for PBXNativeTarget "SalamtakAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDD569B1292A1FC90066236B /* Debug */,
+				EDD569B2292A1FC90066236B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EDD56989292A1FC50066236B /* SalamtakApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EDD5698A292A1FC50066236B /* SalamtakApp.xcdatamodel */,
+			);
+			currentVersion = EDD5698A292A1FC50066236B /* SalamtakApp.xcdatamodel */;
+			path = SalamtakApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = EDD56975292A1FC50066236B /* Project object */;
+}
