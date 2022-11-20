@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		454B7837B84741D535020F60 /* Pods_SalamtakApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62F606E9BF2D9CBDD30EB02A /* Pods_SalamtakApp.framework */; };
 		EDD56985292A1FC50066236B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD56984292A1FC50066236B /* ViewController.swift */; };
 		EDD56988292A1FC50066236B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDD56986292A1FC50066236B /* Main.storyboard */; };
 		EDD5698B292A1FC50066236B /* SalamtakApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EDD56989292A1FC50066236B /* SalamtakApp.xcdatamodeld */; };
@@ -55,8 +56,8 @@
 		EDD56A2D292A20820066236B /* ShoppingCartVC+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD569E6292A20820066236B /* ShoppingCartVC+DataSource.swift */; };
 		EDD56A2E292A20820066236B /* ShoppingCartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD569E7292A20820066236B /* ShoppingCartVC.swift */; };
 		EDD56A2F292A20820066236B /* ShoppingCartVC+Delegation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD569E8292A20820066236B /* ShoppingCartVC+Delegation.swift */; };
-		EDD56A30292A20820066236B /* CartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD569E9292A20820066236B /* CartPresenter.swift */; };
-		EDD56A31292A20820066236B /* CartInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD569EA292A20820066236B /* CartInteractor.swift */; };
+		EDD56A30292A20820066236B /* CartViewModel+Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD569E9292A20820066236B /* CartViewModel+Presenter.swift */; };
+		EDD56A31292A20820066236B /* CartViewModel+Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD569EA292A20820066236B /* CartViewModel+Interactor.swift */; };
 		EDD56A32292A20820066236B /* ShoppingCartVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD569EB292A20820066236B /* ShoppingCartVC.xib */; };
 		EDD56A33292A20820066236B /* ShoppingCartCell.strings in Resources */ = {isa = PBXBuildFile; fileRef = EDD569EE292A20820066236B /* ShoppingCartCell.strings */; };
 		EDD56A34292A20820066236B /* ShoppingCartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD569F1292A20820066236B /* ShoppingCartCell.xib */; };
@@ -67,12 +68,14 @@
 		EDD56A39292A20820066236B /* MedicationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD569FC292A20820066236B /* MedicationCell.swift */; };
 		EDD56A3A292A20820066236B /* MedicationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD569FD292A20820066236B /* MedicationCell.xib */; };
 		EDD56A3B292A20820066236B /* HomeVC+Delegation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD56A00292A20820066236B /* HomeVC+Delegation.swift */; };
-		EDD56A3C292A20820066236B /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD56A01292A20820066236B /* HomeInteractor.swift */; };
+		EDD56A3C292A20820066236B /* HomeVM+Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD56A01292A20820066236B /* HomeVM+Interactor.swift */; };
 		EDD56A3D292A20820066236B /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD56A02292A20820066236B /* HomeVC.xib */; };
 		EDD56A3E292A20820066236B /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD56A04292A20820066236B /* HomeRouter.swift */; };
 		EDD56A3F292A20820066236B /* HomeVC+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD56A05292A20820066236B /* HomeVC+Collection.swift */; };
 		EDD56A40292A20820066236B /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD56A06292A20820066236B /* HomeVC.swift */; };
-		EDD56A41292A20820066236B /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD56A07292A20820066236B /* HomePresenter.swift */; };
+		EDD56A41292A20820066236B /* HomeVM+Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD56A07292A20820066236B /* HomeVM+Presenter.swift */; };
+		EDD56A43292A213C0066236B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = EDD56A42292A213C0066236B /* Podfile */; };
+		EDD56A46292A31A60066236B /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD56A45292A31A60066236B /* Observer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +96,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		62F606E9BF2D9CBDD30EB02A /* Pods_SalamtakApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SalamtakApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A4F84B8DE438EAD0F135788 /* Pods-SalamtakApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SalamtakApp.debug.xcconfig"; path = "Target Support Files/Pods-SalamtakApp/Pods-SalamtakApp.debug.xcconfig"; sourceTree = "<group>"; };
+		DC148584080B16C29242F983 /* Pods-SalamtakApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SalamtakApp.release.xcconfig"; path = "Target Support Files/Pods-SalamtakApp/Pods-SalamtakApp.release.xcconfig"; sourceTree = "<group>"; };
 		EDD5697D292A1FC50066236B /* SalamtakApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SalamtakApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDD56984292A1FC50066236B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EDD56987292A1FC50066236B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -148,8 +154,8 @@
 		EDD569E6292A20820066236B /* ShoppingCartVC+DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ShoppingCartVC+DataSource.swift"; sourceTree = "<group>"; };
 		EDD569E7292A20820066236B /* ShoppingCartVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingCartVC.swift; sourceTree = "<group>"; };
 		EDD569E8292A20820066236B /* ShoppingCartVC+Delegation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ShoppingCartVC+Delegation.swift"; sourceTree = "<group>"; };
-		EDD569E9292A20820066236B /* CartPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartPresenter.swift; sourceTree = "<group>"; };
-		EDD569EA292A20820066236B /* CartInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartInteractor.swift; sourceTree = "<group>"; };
+		EDD569E9292A20820066236B /* CartViewModel+Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CartViewModel+Presenter.swift"; sourceTree = "<group>"; };
+		EDD569EA292A20820066236B /* CartViewModel+Interactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CartViewModel+Interactor.swift"; sourceTree = "<group>"; };
 		EDD569EC292A20820066236B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ShoppingCartVC.xib; sourceTree = "<group>"; };
 		EDD569EF292A20820066236B /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/ShoppingCartCell.strings; sourceTree = "<group>"; };
 		EDD569F0292A20820066236B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ShoppingCartCell.strings; sourceTree = "<group>"; };
@@ -163,12 +169,14 @@
 		EDD569FE292A20820066236B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MedicationCell.xib; sourceTree = "<group>"; };
 		EDD569FF292A20820066236B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/HomeVC.strings; sourceTree = "<group>"; };
 		EDD56A00292A20820066236B /* HomeVC+Delegation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HomeVC+Delegation.swift"; sourceTree = "<group>"; };
-		EDD56A01292A20820066236B /* HomeInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		EDD56A01292A20820066236B /* HomeVM+Interactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HomeVM+Interactor.swift"; sourceTree = "<group>"; };
 		EDD56A03292A20820066236B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/HomeVC.xib; sourceTree = "<group>"; };
 		EDD56A04292A20820066236B /* HomeRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		EDD56A05292A20820066236B /* HomeVC+Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HomeVC+Collection.swift"; sourceTree = "<group>"; };
 		EDD56A06292A20820066236B /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
-		EDD56A07292A20820066236B /* HomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		EDD56A07292A20820066236B /* HomeVM+Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HomeVM+Presenter.swift"; sourceTree = "<group>"; };
+		EDD56A42292A213C0066236B /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		EDD56A45292A31A60066236B /* Observer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +184,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				454B7837B84741D535020F60 /* Pods_SalamtakApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,13 +205,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		291CB9E4C19457E43A2E441F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9A4F84B8DE438EAD0F135788 /* Pods-SalamtakApp.debug.xcconfig */,
+				DC148584080B16C29242F983 /* Pods-SalamtakApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C73C0E48A097CC6AEC904722 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				62F606E9BF2D9CBDD30EB02A /* Pods_SalamtakApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EDD56974292A1FC50066236B = {
 			isa = PBXGroup;
 			children = (
+				EDD56A42292A213C0066236B /* Podfile */,
 				EDD5697F292A1FC50066236B /* SalamtakApp */,
 				EDD56999292A1FC90066236B /* SalamtakAppTests */,
 				EDD569A3292A1FC90066236B /* SalamtakAppUITests */,
 				EDD5697E292A1FC50066236B /* Products */,
+				291CB9E4C19457E43A2E441F /* Pods */,
+				C73C0E48A097CC6AEC904722 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -290,6 +319,7 @@
 		EDD569C3292A20800066236B /* API */ = {
 			isa = PBXGroup;
 			children = (
+				EDD56A44292A31A60066236B /* DataBinding */,
 				EDD569C4292A20800066236B /* Constants.swift */,
 				EDD569C5292A20800066236B /* APIClient.swift */,
 				EDD569C6292A20800066236B /* APIRouter.swift */,
@@ -356,8 +386,8 @@
 				EDD569E6292A20820066236B /* ShoppingCartVC+DataSource.swift */,
 				EDD569E7292A20820066236B /* ShoppingCartVC.swift */,
 				EDD569E8292A20820066236B /* ShoppingCartVC+Delegation.swift */,
-				EDD569E9292A20820066236B /* CartPresenter.swift */,
-				EDD569EA292A20820066236B /* CartInteractor.swift */,
+				EDD569E9292A20820066236B /* CartViewModel+Presenter.swift */,
+				EDD569EA292A20820066236B /* CartViewModel+Interactor.swift */,
 				EDD569EB292A20820066236B /* ShoppingCartVC.xib */,
 				EDD569ED292A20820066236B /* ShoppingCartCell */,
 			);
@@ -381,12 +411,12 @@
 				EDD569F6292A20820066236B /* HomeVC.strings */,
 				EDD569F8292A20820066236B /* Cells */,
 				EDD56A00292A20820066236B /* HomeVC+Delegation.swift */,
-				EDD56A01292A20820066236B /* HomeInteractor.swift */,
+				EDD56A01292A20820066236B /* HomeVM+Interactor.swift */,
 				EDD56A02292A20820066236B /* HomeVC.xib */,
 				EDD56A04292A20820066236B /* HomeRouter.swift */,
 				EDD56A05292A20820066236B /* HomeVC+Collection.swift */,
 				EDD56A06292A20820066236B /* HomeVC.swift */,
-				EDD56A07292A20820066236B /* HomePresenter.swift */,
+				EDD56A07292A20820066236B /* HomeVM+Presenter.swift */,
 			);
 			path = HomeVC;
 			sourceTree = "<group>";
@@ -401,6 +431,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		EDD56A44292A31A60066236B /* DataBinding */ = {
+			isa = PBXGroup;
+			children = (
+				EDD56A45292A31A60066236B /* Observer.swift */,
+			);
+			path = DataBinding;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -408,9 +446,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDD569AA292A1FC90066236B /* Build configuration list for PBXNativeTarget "SalamtakApp" */;
 			buildPhases = (
+				AF249DBE92880CBA3F2884F2 /* [CP] Check Pods Manifest.lock */,
 				EDD56979292A1FC50066236B /* Sources */,
 				EDD5697A292A1FC50066236B /* Frameworks */,
 				EDD5697B292A1FC50066236B /* Resources */,
+				6910D2D1CA295C584372E822 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -515,6 +555,7 @@
 				EDD56988292A1FC50066236B /* Main.storyboard in Resources */,
 				EDD56A33292A20820066236B /* ShoppingCartCell.strings in Resources */,
 				EDD56A2A292A20820066236B /* ShoppingCartVC.strings in Resources */,
+				EDD56A43292A213C0066236B /* Podfile in Resources */,
 				EDD56A34292A20820066236B /* ShoppingCartCell.xib in Resources */,
 				EDD56A3A292A20820066236B /* MedicationCell.xib in Resources */,
 				EDD56A37292A20820066236B /* HomeVC.strings in Resources */,
@@ -537,13 +578,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6910D2D1CA295C584372E822 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SalamtakApp/Pods-SalamtakApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SalamtakApp/Pods-SalamtakApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SalamtakApp/Pods-SalamtakApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF249DBE92880CBA3F2884F2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SalamtakApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EDD56979292A1FC50066236B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				EDD56A1D292A20820066236B /* Reload.swift in Sources */,
-				EDD56A30292A20820066236B /* CartPresenter.swift in Sources */,
+				EDD56A30292A20820066236B /* CartViewModel+Presenter.swift in Sources */,
 				EDD56A19292A20820066236B /* VC+CoreDataProcesses(CRUD).swift in Sources */,
 				EDD56A08292A20820066236B /* RootClass.swift in Sources */,
 				EDD56A14292A20820066236B /* Constants.swift in Sources */,
@@ -555,6 +638,7 @@
 				EDD56A18292A20820066236B /* API_Post.swift in Sources */,
 				EDD56A12292A20820066236B /* UIVisualEffectViewX.swift in Sources */,
 				EDD56A23292A20820066236B /* Result_Error.swift in Sources */,
+				EDD56A46292A31A60066236B /* Observer.swift in Sources */,
 				EDD56A16292A20820066236B /* APIRouter.swift in Sources */,
 				EDD56A13292A20820066236B /* UISliderX.swift in Sources */,
 				EDD56985292A1FC50066236B /* ViewController.swift in Sources */,
@@ -576,16 +660,16 @@
 				EDD56A36292A20820066236B /* HomeVC+SearchBarDelegate.swift in Sources */,
 				EDD56A0E292A20820066236B /* UIViewAnchorPoint.swift in Sources */,
 				EDD56A2E292A20820066236B /* ShoppingCartVC.swift in Sources */,
-				EDD56A41292A20820066236B /* HomePresenter.swift in Sources */,
+				EDD56A41292A20820066236B /* HomeVM+Presenter.swift in Sources */,
 				EDD56A2B292A20820066236B /* ShoppingCartVC+SearchBarDelegation.swift in Sources */,
 				EDD56A2F292A20820066236B /* ShoppingCartVC+Delegation.swift in Sources */,
-				EDD56A31292A20820066236B /* CartInteractor.swift in Sources */,
+				EDD56A31292A20820066236B /* CartViewModel+Interactor.swift in Sources */,
 				EDD56A3F292A20820066236B /* HomeVC+Collection.swift in Sources */,
 				EDD56A0D292A20820066236B /* UILabelX.swift in Sources */,
 				EDD56A3E292A20820066236B /* HomeRouter.swift in Sources */,
 				EDD56A1A292A20820066236B /* APIClient_Ext.swift in Sources */,
 				EDD56A17292A20820066236B /* API_Get.swift in Sources */,
-				EDD56A3C292A20820066236B /* HomeInteractor.swift in Sources */,
+				EDD56A3C292A20820066236B /* HomeVM+Interactor.swift in Sources */,
 				EDD5698B292A1FC50066236B /* SalamtakApp.xcdatamodeld in Sources */,
 				EDD56A26292A20820066236B /* Extensions.swift in Sources */,
 				EDD56A2D292A20820066236B /* ShoppingCartVC+DataSource.swift in Sources */,
@@ -841,6 +925,7 @@
 		};
 		EDD569AB292A1FC90066236B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A4F84B8DE438EAD0F135788 /* Pods-SalamtakApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -868,6 +953,7 @@
 		};
 		EDD569AC292A1FC90066236B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC148584080B16C29242F983 /* Pods-SalamtakApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -25,7 +25,7 @@ extension HomeVC:UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
         let availableWidth = collectionView.frame.size.width-paddingSpace
         let widthPerItem = availableWidth/numberOfItemsInRow
         
-        presenter?.updateCellSize(medicineIndex: indexPath.row, widthForItem: widthPerItem, cellSizeHandler: {
+        homeViewModel?.updateCellSize(medicineIndex: indexPath.row, widthForItem: widthPerItem, cellSizeHandler: {
             height in
             heightPerItem = height
         })

@@ -11,7 +11,7 @@ import UIKit
 extension HomeVC:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return presenter?.separateOrdersContainer.limit ?? 0
+        return homeViewModel?.limit ?? 0
         
     }
     
@@ -24,7 +24,7 @@ extension HomeVC:UICollectionViewDataSource{
             return UICollectionViewCell()
         }
         
-        self.presenter?.updateCellInfo(medicineIndex: indexPath.row){
+        self.homeViewModel?.updateCellInfo(medicineIndex: indexPath.row){
             medicineContainer  in
             cell.nameLabel.text = medicineContainer.medicineNameText
             cell.priceLabel.text = medicineContainer.medicinePriceText
@@ -35,10 +35,10 @@ extension HomeVC:UICollectionViewDataSource{
                 cell.updateQuantityPrice={quantity,isFlag in
                     cell.addToCartView.isHidden = quantity > 0
                     cell.quantityStackView.isHidden = quantity <= 0
-                    self.presenter?.arrOfItemsCount[indexPath.row] = quantity
+                    self.homeViewModel?.arrOfItemsCount[indexPath.row] = quantity
                 }
                 
-                guard let count = self.presenter?.arrOfItemsCount[indexPath.row] else {return}
+                guard let count = self.homeViewModel?.arrOfItemsCount[indexPath.row] else {return}
                 cell.addToCartView.isHidden = count > 0
                 cell.quantityStackView.isHidden = count <= 0
                 cell.quantityLabel.text = "\(count)"

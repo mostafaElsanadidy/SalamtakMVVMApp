@@ -19,7 +19,7 @@ extension ShoppingCartVC:UITableViewDelegate,SwipeTableViewCellDelegate{
         let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
             // handle action by updating model with deletion
             action.fulfill(with: .delete)
-            self.presenter?.deleteItems(at: indexPath.row)
+            self.cartViewModel?.deleteItems(at: indexPath.row)
             
         }
         // customize the action appearance

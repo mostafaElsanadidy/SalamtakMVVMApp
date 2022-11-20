@@ -14,9 +14,9 @@ extension ShoppingCartVC:UISearchBarDelegate{
     func filterForSearchTextAndScopeButton(searchText:String) {
         
         medicinesTableView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
-            presenter?.searchKey = searchText
+            cartViewModel?.searchKey = searchText
             
-            presenter?.appendGroupOfMedicines()
+            cartViewModel?.appendGroupOfMedicines()
     }
     
     

@@ -87,12 +87,13 @@ class CoreDataHandler<T:NSManagedObject>:AnyCoreDataHandler {
                 request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [parentRestaurantPredicate])
             }
 
-//            print(request)
+            print(request)
             items = try viewContext.fetch(request)
             handler(.success(items))
+            
         }
         catch {
-//            print("Error Loading Data From Context".localized + "\(error)")
+            print("Error Loading Data From Context".localized + "\(error)")
             handler(.failure(.status_Failure))
         }
     }

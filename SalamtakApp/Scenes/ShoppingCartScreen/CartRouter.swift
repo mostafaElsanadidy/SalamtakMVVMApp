@@ -14,6 +14,7 @@ protocol AnyCartRouter:AnyRouter {
     var navigationController: UINavigationController? {set get}
     
      static func start() -> AnyCartRouter
+    func stop()
     
 }
 class CartRouter: AnyCartRouter {
@@ -26,16 +27,19 @@ class CartRouter: AnyCartRouter {
         // assign viper
          let searchVC = ShoppingCartVC()
         var view:AnyCartView = searchVC
-        var presenter:AnyCartPresenter = CartPresenter()
-        var interactor:AnyCartInteractor = CartInteractor()
+        var ViewModel:AnyCartViewModel = CartViewModel()
+//        var interactor:AnyCartInteractor = CartInteractor()
         
-        view.presenter = presenter
-        presenter.view = view
-        presenter.interactor = interactor
-        presenter.router = recipeRouter
-        interactor.presenter = presenter
+        view.cartViewModel = ViewModel
+//        ViewModel.view = view
+//        ViewModel.interactor = interactor
+        ViewModel.router = recipeRouter
+//        interactor.ViewModel = ViewModel
         recipeRouter.entry = view as? EntryCartPoint
         
         return recipeRouter
+    }
+    func stop() {
+        self.navigationController?.popViewController(animated: true)
     }
 }

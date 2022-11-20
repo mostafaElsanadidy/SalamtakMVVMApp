@@ -1,0 +1,38 @@
+PODS:
+  - Alamofire (5.6.2)
+  - Kingfisher (7.4.1)
+  - MOLH (1.4.3)
+  - NVActivityIndicatorView (4.8.0):
+    - NVActivityIndicatorView/Presenter (= 4.8.0)
+  - NVActivityIndicatorView/Presenter (4.8.0)
+  - SwiftyJSON (5.0.1)
+  - SwipeCellKit (2.7.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.2)
+  - Kingfisher (~> 7.0)
+  - MOLH
+  - NVActivityIndicatorView (~> 4.8.0)
+  - SwiftyJSON
+  - SwipeCellKit
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Kingfisher
+    - MOLH
+    - NVActivityIndicatorView
+    - SwiftyJSON
+    - SwipeCellKit
+
+SPEC CHECKSUMS:
+  Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
+  Kingfisher: cd762a593a61b2fbecf7645c00f9a801a3ebfc9c
+  MOLH: e45827d200aeb1310641090fd8cd03ad2b42ae72
+  NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
+  SwipeCellKit: 3972254a826da74609926daf59b08d6c72e619ea
+
+PODFILE CHECKSUM: 8f46105ec5e84f2698f0dea501348d030091f52a
+
+COCOAPODS: 1.11.3

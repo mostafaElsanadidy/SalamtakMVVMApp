@@ -13,7 +13,7 @@ extension ShoppingCartVC:UITableViewDataSource{
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter?.limit ?? 0
+        return cartViewModel?.limit ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -24,7 +24,7 @@ extension ShoppingCartVC:UITableViewDataSource{
             return UITableViewCell()
         }
             
-        self.presenter?.updateCellInfo(medicineIndex: indexPath.row){
+        self.cartViewModel?.updateCellInfo(medicineIndex: indexPath.row){
             medicineContainer  in
             cell.nameLabel.text = medicineContainer.medicineNameText
             cell.priceLabel.text = medicineContainer.medicinePriceText
@@ -33,22 +33,22 @@ extension ShoppingCartVC:UITableViewDataSource{
                 cell.medicineImageView.kf.setImage(with: sp_url)}
             
             cell.updateQuantityPrice={quantity,isFlag in
-               self.presenter?.arrOfItemsCount[indexPath.row] = quantity
+               self.cartViewModel?.arrOfItemsCount[indexPath.row] = quantity
                 if quantity == 0{
-                    self.presenter?.deleteItems(at: indexPath.row)
+                    self.cartViewModel?.deleteItems(at: indexPath.row)
                 }else{
-                    self.presenter?.updateMedicine(at: indexPath.row, with: quantity)}
+                    self.cartViewModel?.updateMedicine(at: indexPath.row, with: quantity)}
             
             }
-            let count = self.presenter?.arrOfItemsCount[indexPath.row]
+            let count = self.cartViewModel?.arrOfItemsCount[indexPath.row]
 
                         cell.quantityLabel.text = "\(count ?? 0)"
-                cell.deleteItemFromCart = {self.presenter?.deleteItems(at: indexPath.row)}
+                cell.deleteItemFromCart = {self.cartViewModel?.deleteItems(at: indexPath.row)}
             
             
         }
        
-//        if let medicine = self.presenter?.medicines[indexPath.row]{
+//        if let medicine = self.ViewModel?.medicines[indexPath.row]{
 //
 //                cell.nameLabel.text = "lang".localized == "en" ? medicine.enName : medicine.arName
 //            

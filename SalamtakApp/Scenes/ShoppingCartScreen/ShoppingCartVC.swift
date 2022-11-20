@@ -8,16 +8,16 @@
 import UIKit
 
 protocol AnyView {
-    func loadMedications()
-    func collectionViewDidLoad(isScrollToTop:Bool)
-    func collectionViewWillLoad()
-    func update(with error: Result_Error)
-    func updateCountOfSelectedItems(numOfItems:Int,totalPrice:String)
+//    func loadMedications()
+//    func collectionViewDidLoad(isScrollToTop:Bool)
+//    func collectionViewWillLoad()
+//    func update(with error: Result_Error)
+//    func updateCountOfSelectedItems(numOfItems:Int,totalPrice:String)
 }
 
 protocol AnyCartView:AnyView{
     
-    var presenter: AnyCartPresenter? {get set}
+    var cartViewModel: AnyCartViewModel? {get set}
 }
 
 class ShoppingCartVC: UIViewController {
@@ -32,19 +32,60 @@ class ShoppingCartVC: UIViewController {
     @IBOutlet weak var totalPriceView: UIViewX!
 
 
-    var presenter: AnyCartPresenter?
+    var cartViewModel: AnyCartViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        presenter?.viewDidLoad()
+        setupBinder()
+        cartViewModel?.viewDidLoad()
     }
+
     
+    func setupBinder(){
+        cartViewModel?.tupleOf_totalPrice_arrOfItemsCount.bind{
+            [weak self] tuple in
+            guard let strongSelf = self else{return}
+            DispatchQueue.main.async{
+                strongSelf.updateCountOfSelectedItems(numOfItems: tuple.arrOfItemsCount.reduce(0,+), totalPrice: tuple.totalPriceText)
+            }
+        }
+//        cartViewModel?.isReloadCollection.bind{
+//            [weak self] isReloadCollection in
+//            guard let strongSelf = self else{return}
+//            DispatchQueue.main.async{
+//                strongSelf.collectionViewWillLoad()
+//            }
+//        }
+        cartViewModel?.tupleOf_isScrollTag_isShowActivityView.bind{
+            [weak self] tuple in
+            guard let strongSelf = self else{return}
+            DispatchQueue.main.async{
+//                strongSelf.collectionViewWillLoad()
+                strongSelf.collectionViewDidLoad(isScrollToTop: tuple.isScrollToTop, isShowActivityView: tuple.isShowActivityView)
+            }
+        }
+        cartViewModel?.isRefreshScreenTag.bind{
+            [weak self] isRefreshScreenTag in
+            guard let strongSelf = self else{return}
+            DispatchQueue.main.async{
+                if isRefreshScreenTag{
+                    strongSelf.loadMedications()}
+            }
+        }
+        cartViewModel?.error.bind{
+            [weak self] error in
+            guard let strongSelf = self else{return}
+            DispatchQueue.main.async{
+                strongSelf.update(with: error)
+            }
+        }
+    }
     
     @IBAction func changeLanguage(_ sender: UIButton) {
         
-        presenter?.changeLanguage()
+        cartViewModel?.changeLanguage()
         
     }
     func updateCountOfSelectedItems(numOfItems:Int,totalPrice:String){
@@ -78,6 +119,7 @@ class ShoppingCartVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        cartViewModel?.viewWillAppear()
     }
 
     @IBAction func didCardBttnTapped(_ sender: UIButton) {
@@ -87,7 +129,7 @@ class ShoppingCartVC: UIViewController {
     }
     
     @IBAction func didReturnBttnTapped(_ sender: UIButton) {
-        self.popVCFromNav()
+        self.cartViewModel?.didReturnBttnTapped()
     }
 
     
@@ -100,6 +142,7 @@ class ShoppingCartVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
 
 }
 
@@ -111,35 +154,36 @@ extension ShoppingCartVC:AnyCartView{
         initSearchBar()
     }
     
-    func collectionViewDidLoad(isScrollToTop:Bool){
+    func collectionViewDidLoad(isScrollToTop:Bool,isShowActivityView:Bool){
             
-        showActivityView(isShow: false)
-        
+        showActivityView(isShow: isShowActivityView)
+        guard !isShowActivityView else {
+            return
+        }
            medicinesTableView.reloadData()
-        medicinesTable_View.isHidden = (presenter?.limit ?? 0) == 0
-        totalPriceView.isHidden = (presenter?.limit ?? 0) == 0
+        medicinesTable_View.isHidden = (cartViewModel?.limit ?? 0) == 0
+        totalPriceView.isHidden = (cartViewModel?.limit ?? 0) == 0
         
         if isScrollToTop{
             medicinesTableView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)}
-        
         }
     
-    func collectionViewWillLoad(){
-
-            showActivityView(isShow: true)
-    }
+//    func collectionViewWillLoad(){
+//
+//            showActivityView(isShow: true)
+//    }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let  height = scrollView.frame.size.height
         let contentYoffset = scrollView.contentOffset.y
         let distanceFromBottom = scrollView.contentSize.height - contentYoffset
         if Int(distanceFromBottom) <= Int(height) { // when you reach the bottom
-            presenter?.appendGroupOfMedicines()
+            cartViewModel?.appendGroupOfMedicines()
         }
     }
     
     func update(with error: Result_Error) {
-//        print(error.error_Desc)
+        print(error.error_Desc)
     }
     
 

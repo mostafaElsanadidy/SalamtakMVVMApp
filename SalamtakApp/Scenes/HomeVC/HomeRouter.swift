@@ -22,7 +22,7 @@ protocol AnyMedicationRouter:AnyRouter{
      static func start() -> AnyMedicationRouter
 //    func stop()
     func route(to destination:AnyCartRouter)
-//    that's why the presenter holds on to router
+//    that's why the ViewModel holds on to router
 }
 
 class MedicationRouter: AnyMedicationRouter {
@@ -45,14 +45,14 @@ class MedicationRouter: AnyMedicationRouter {
         // assign viper
          let searchVC = HomeVC()
         var view:AnyMedicationView = searchVC
-        var presenter:AnyMedicationPresenter = MedicationPresenter()
-        var interactor:AnyMedicationInteractor = MedicationInteractor()
+        var ViewModel:AnyMedicationViewModel = MedicationViewModel()
+//        var interactor:AnyMedicationInteractor = MedicationInteractor()
         
-        view.presenter = presenter
-        presenter.view = view
-        presenter.interactor = interactor
-        presenter.router = recipeRouter
-        interactor.presenter = presenter
+        view.homeViewModel = ViewModel
+//        ViewModel.view = view
+//        ViewModel.interactor = interactor
+        ViewModel.router = recipeRouter
+//        interactor.ViewModel = ViewModel
         recipeRouter.entry = view as? EntryMedicationPoint
         return recipeRouter
     }

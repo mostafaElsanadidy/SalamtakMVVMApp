@@ -17,8 +17,8 @@ extension HomeVC:UISearchBarDelegate{
         homeCollection.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
         
         if searchText != ""{
-            presenter?.searchKey = searchText
-            presenter?.appendGroupOfMedicines()
+            homeViewModel?.searchKey = searchText
+            homeViewModel?.appendGroupOfMedicines()
         }
     }
     
