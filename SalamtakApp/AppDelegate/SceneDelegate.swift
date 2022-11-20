@@ -1,22 +1,29 @@
 //
 //  SceneDelegate.swift
-//  SalamtakApp
+//  Salamtak_App
 //
-//  Created by mostafa elsanadidy on 20.11.22.
+//  Created by mostafa elsanadidy on 07.11.22.
 //
 
 import UIKit
+import MOLH
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+class SceneDelegate: UIResponder, UIWindowSceneDelegate,ReloadDelegate,MOLHResetable {
 
     var window: UIWindow?
 
-
+    func reset() {
+        redirect_To_MainVC(window: window!)
+    }
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        let window = UIWindow(windowScene: windowScene)
+        redirect_To_MainVC(window: window)
+
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -51,5 +58,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
 
+    // MARK: - Redirect To VC
+    @objc func redirect_To_VC(vc : UIViewController) {
+        let navController = UINavigationController(rootViewController: vc)
+        navController.isNavigationBarHidden = true
+        self.window?.rootViewController = navController
+        self.window?.makeKeyAndVisible()
+        UIView.transition(with: window!, duration: 0.3, options: .transitionCrossDissolve, animations: nil, completion: nil)
+    }
+    
+    func redirect_To_MainVC(window:UIWindow){
+    var router = MedicationRouter.start()
+    let initialVC = router.entry
+    let viewController = initialVC
+    let navController = UINavigationController(rootViewController: viewController ?? HomeVC())
+    router.navigationController = navController
+    navController.isNavigationBarHidden = true
+    window.rootViewController = navController
+    self.window = window
+    window.makeKeyAndVisible()
+        UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromLeft, animations: nil, completion: nil)}
 }
+
 

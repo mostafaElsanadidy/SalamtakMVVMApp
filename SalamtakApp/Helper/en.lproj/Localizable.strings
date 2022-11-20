@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  Salamtak_App
+
+  Created by mostafa elsanadidy on 09.11.22.
+  
+*/
+
+"lang" = "en" ;
+"Request Failed" = "Request Failed" ;
+
+"Request Status Failure" = "Request Status Failure" ;
+"Error Savinng Context" = "Error Savinng Context" ;
+"Error Loading Data From Context" = "Error Loading Data From Context" ;
+"Done!" = "Done!" ;
+"Failed" = "Failed" ;
+"Network Connection Error" = "Network Connection Error" ;
+"pounds" = "pounds" ;
+"It varies according to the region" = "It varies according to the region" ;

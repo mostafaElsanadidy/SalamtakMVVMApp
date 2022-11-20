@@ -1,0 +1,30 @@
+
+/* Class = "UISearchBar"; 11P-IP-kq7.scopeButtonTitles[0] = "Title"; ObjectID = "11P-IP-kq7"; */
+"11P-IP-kq7.scopeButtonTitles[0]" = "Title";
+
+/* Class = "UISearchBar"; 11P-IP-kq7.scopeButtonTitles[1] = "Title"; ObjectID = "11P-IP-kq7"; */
+"11P-IP-kq7.scopeButtonTitles[1]" = "Title";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "4pG-K9-exO"; */
+"4pG-K9-exO.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "HMp-HD-rUD"; */
+"HMp-HD-rUD.text" = "Label";
+
+/* Class = "UIButton"; configuration.title = "Checkout"; ObjectID = "V5F-ii-3zC"; */
+"V5F-ii-3zC.configuration.title" = "تأكيد الطلب";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "V5F-ii-3zC"; */
+"V5F-ii-3zC.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "6"; ObjectID = "WNH-Va-cLu"; */
+"WNH-Va-cLu.configuration.title" = "6";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "WNH-Va-cLu"; */
+"WNH-Va-cLu.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Search"; ObjectID = "Y7O-Pd-5hN"; */
+"Y7O-Pd-5hN.text" = "البحث";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "sBD-M2-wig"; */
+"sBD-M2-wig.normalTitle" = "Button";

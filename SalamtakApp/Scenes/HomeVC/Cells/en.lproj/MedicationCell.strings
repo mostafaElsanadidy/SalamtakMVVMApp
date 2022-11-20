@@ -1,0 +1,18 @@
+
+/* Class = "UILabel"; text = "أضف للقائمة"; ObjectID = "4TZ-ZO-uI0"; */
+"4TZ-ZO-uI0.text" = "أضف للقائمة";
+
+/* Class = "UIButton"; normalTitle = "+"; ObjectID = "50m-kN-nIq"; */
+"50m-kN-nIq.normalTitle" = "+";
+
+/* Class = "UILabel"; text = "LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel"; ObjectID = "DjL-cb-3JW"; */
+"DjL-cb-3JW.text" = "LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel";
+
+/* Class = "UIButton"; normalTitle = "-"; ObjectID = "K2n-UG-o3n"; */
+"K2n-UG-o3n.normalTitle" = "-";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "YAd-XM-EEe"; */
+"YAd-XM-EEe.text" = "0";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "zaD-bQ-PO5"; */
+"zaD-bQ-PO5.text" = "Label";

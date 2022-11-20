@@ -1,0 +1,36 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "5Ue-0K-VBI"; */
+"5Ue-0K-VBI.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "CFH-hR-wpt"; */
+"CFH-hR-wpt.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "IUx-Rh-2Al"; */
+"IUx-Rh-2Al.text" = "Label";
+
+/* Class = "UISearchBar"; RY5-Sa-oWk.scopeButtonTitles[0] = "Title"; ObjectID = "RY5-Sa-oWk"; */
+"RY5-Sa-oWk.scopeButtonTitles[0]" = "Title";
+
+/* Class = "UISearchBar"; RY5-Sa-oWk.scopeButtonTitles[1] = "Title"; ObjectID = "RY5-Sa-oWk"; */
+"RY5-Sa-oWk.scopeButtonTitles[1]" = "Title";
+
+/* Class = "UILabel"; text = "Shipping fees"; ObjectID = "aZc-40-et3"; */
+"aZc-40-et3.text" = "Shipping fees";
+
+/* Class = "UILabel"; text = "£4.99"; ObjectID = "cQG-XI-fHX"; */
+"cQG-XI-fHX.text" = "£4.99";
+
+/* Class = "UILabel"; text = "Product prices may vary in different pharmacies"; ObjectID = "gv9-cJ-XtG"; */
+"gv9-cJ-XtG.text" = "Product prices may vary in different pharmacies";
+
+/* Class = "UIButton"; normalTitle = "CHECKOUT"; ObjectID = "h5x-yi-lBK"; */
+"h5x-yi-lBK.normalTitle" = "CHECKOUT";
+
+/* Class = "UILabel"; text = "Order Amount"; ObjectID = "hPu-w5-77r"; */
+"hPu-w5-77r.text" = "Order Amount";
+
+/* Class = "UILabel"; text = "£9.30"; ObjectID = "kNZ-Nz-flK"; */
+"kNZ-Nz-flK.text" = "£9.30";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "uhh-cX-CWx"; */
+"uhh-cX-CWx.normalTitle" = "Button";

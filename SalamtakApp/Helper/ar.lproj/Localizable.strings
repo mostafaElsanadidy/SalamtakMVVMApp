@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  Salamtak_App
+
+  Created by mostafa elsanadidy on 09.11.22.
+  
+*/
+
+"lang" = "ar" ;
+"Request Failed" = "فشل الطلب" ;
+
+"Request Status Failure" = "فشل حالة الطلب" ;
+"Error Savinng Context" = "خطأ فى حفظ البيانات" ;
+"Error Loading Data From Context" = "خطأ فى تحميل البيانات" ;
+"Done!" = "!أحسنت" ;
+"Failed" = "فشل" ;
+"Network Connection Error" = "خطأ اتصال الشبكة" ;
+"pounds" = "جنيه" ;
+"It varies according to the region" = "تختلف حسب المنطقة" ;
+
