@@ -1,8 +1,8 @@
 //
 //  MedicationCell.swift
-//  Salamtak
+//  SalamtakApp
 //
-//  Created by mostafa elsanadidy on 06.11.22.
+//  Created by mostafa elsanadidy on 19.11.22.
 //
 
 import UIKit

@@ -26,7 +26,9 @@ class CoreDataHandler<T:NSManagedObject>:AnyCoreDataHandler {
     var defaultHandler: () -> () = {}
     
     var items: [T] = []
-    
+    var entityName:String{
+        print(T.description().components(separatedBy: "."))
+        return T.description().components(separatedBy: ".").last! }
     typealias U = NSFetchRequest<T>
    
     //MARK: - DEFAULT HANDLER
@@ -89,6 +91,7 @@ class CoreDataHandler<T:NSManagedObject>:AnyCoreDataHandler {
 
             print(request)
             items = try viewContext.fetch(request)
+//            viewContext.exe
             handler(.success(items))
             
         }
@@ -104,5 +107,52 @@ class CoreDataHandler<T:NSManagedObject>:AnyCoreDataHandler {
         updateHandler(items)
        
         saveItems(afterSaving: afterUpdateHandler)
+    }
+    
+    func updateAllItemsInOneGo() {
+        
+        let batchUpdate = NSBatchUpdateRequest(entityName: entityName)
+//        batchUpdate.propertiesToUpdate = [#keyPath(T.favorite): true]
+        batchUpdate.affectedStores = viewContext.persistentStoreCoordinator?.persistentStores
+        batchUpdate.resultType = .updatedObjectsCountResultType
+        
+        do {
+          let batchResult =
+            try viewContext.execute(batchUpdate)
+              as! NSBatchUpdateResult
+          print("Records updated \(batchResult.result!)")
+        } catch let error as NSError {
+          print("Could not update \(error), \(error.userInfo)")
+        }
+    }
+    
+    func removeNotificationsOlderThan(days: Int) {
+        let privateContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        privateContext.persistentStoreCoordinator = viewContext.persistentStoreCoordinator
+        // Calculate the limit date for a record to be valid by using the days parameter of your method:
+        let limitDate = Calendar.current.date(byAdding: .minute, value: -days, to: Date())
+        // Create a predicate that match this date:
+        let predicate = NSPredicate(format: "createdDate <= %@", limitDate! as NSDate)
+        // Initialize the NSFetchRequest:
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        // Add the predicate to it:
+        fetchRequest.predicate = predicate
+        // Initialize your NSBatchDeleteRequest using your fetch request:
+        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        // Perform the delete operation asynchronously:
+        privateContext.perform {
+            do {
+                // Try executing the batch request:
+                try privateContext.execute(batchDeleteRequest)
+                if privateContext.hasChanges {
+                    // Reflect the changes if anything changed:
+                    try privateContext.save()
+                }
+            }
+            catch let error {
+                // Handle the error here
+                print(error)
+            }
+        }
     }
 }

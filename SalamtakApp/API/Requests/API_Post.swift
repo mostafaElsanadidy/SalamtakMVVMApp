@@ -29,15 +29,16 @@ extension APIClient{
             }
 //            print(success)
             ad.killLoading()
+//            "please check connecting to internet and try again"
 //            let sms = getError(json: json)
-//            ad.CurrentRootVC()?.show_Popup(body: message, type: .single, status: .failure)
-//            completionHandler(.failure(.status_Failure))
+            ad.CurrentRootVC()?.show_Popup(body: "there isn't current results please try again later", type: .single, status: .failure)
+            completionHandler(.failure(.status_Failure))
             
         }, _: { (error) in
             ad.killLoading()
             DispatchQueue.main.async {
-//                ad.CurrentRootVC()?.show_Popup(body: error.debugDescription, type: .single, status: .failure)
-//                completionHandler(.failure(.req_Failure))
+                ad.CurrentRootVC()?.show_Popup(body: String(describing: (error as? NSError)?.code) , type: .single, status: .failure)
+                completionHandler(.failure(.req_Failure))
             }
         })
 

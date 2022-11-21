@@ -1,8 +1,8 @@
 //
 //  ShoppingCartCell.swift
-//  CheeseBurgerApp
+//  SalamtakApp 
 //
-//  Created by mostafa elsanadidy on 22.08.22.
+//  Created by mostafa elsanadidy on 20.11.22.
 //
 
 import UIKit
