@@ -14,8 +14,9 @@
 		ED0CE257292B97D9009D8662 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0CE252292B97D9009D8662 /* MainCoordinator.swift */; };
 		ED0CE259292B97D9009D8662 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0CE254292B97D9009D8662 /* Coordinator.swift */; };
 		ED0CE25B292B9943009D8662 /* ShoppingCartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0CE25A292B9943009D8662 /* ShoppingCartCoordinator.swift */; };
-		EDA5A194292B5A090084230E /* HeadNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA5A193292B5A090084230E /* HeadNavView.swift */; };
-		EDA5A196292B5A270084230E /* HeadNavView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDA5A195292B5A270084230E /* HeadNavView.xib */; };
+		ED0CE261292BA9DC009D8662 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0CE260292BA9DC009D8662 /* Pagination.swift */; };
+		ED0CE263292BAA01009D8662 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0CE262292BAA01009D8662 /* Presenter.swift */; };
+		ED0CE266292BAB12009D8662 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0CE265292BAB12009D8662 /* Interactor.swift */; };
 		EDD56985292A1FC50066236B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD56984292A1FC50066236B /* ViewController.swift */; };
 		EDD56988292A1FC50066236B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDD56986292A1FC50066236B /* Main.storyboard */; };
 		EDD5698B292A1FC50066236B /* SalamtakApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EDD56989292A1FC50066236B /* SalamtakApp.xcdatamodeld */; };
@@ -49,9 +50,8 @@
 		EDD56A1F292A20820066236B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD569D1292A20810066236B /* SceneDelegate.swift */; };
 		EDD56A20292A20820066236B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EDD569D3292A20810066236B /* Localizable.strings */; };
 		EDD56A21292A20820066236B /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD569D6292A20810066236B /* NetworkHelper.swift */; };
-		EDD56A22292A20820066236B /* UIVC_Blur_Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD569D7292A20810066236B /* UIVC_Blur_Ext.swift */; };
 		EDD56A23292A20820066236B /* Result_Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD569D8292A20810066236B /* Result_Error.swift */; };
-		EDD56A24292A20820066236B /* Card View.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD569D9292A20810066236B /* Card View.swift */; };
+		EDD56A24292A20820066236B /* LocalizedUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD569D9292A20810066236B /* LocalizedUIView.swift */; };
 		EDD56A25292A20820066236B /* UIVC_Alert_Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD569DA292A20810066236B /* UIVC_Alert_Ext.swift */; };
 		EDD56A26292A20820066236B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD569DB292A20810066236B /* Extensions.swift */; };
 		EDD56A27292A20820066236B /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD569DC292A20810066236B /* UIImage.swift */; };
@@ -81,6 +81,8 @@
 		EDD56A41292A20820066236B /* HomeVM+Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD56A07292A20820066236B /* HomeVM+Presenter.swift */; };
 		EDD56A43292A213C0066236B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = EDD56A42292A213C0066236B /* Podfile */; };
 		EDD56A46292A31A60066236B /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD56A45292A31A60066236B /* Observer.swift */; };
+		EDFC50DD292CD661002BEAD1 /* HeadNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC50DB292CD661002BEAD1 /* HeadNavView.swift */; };
+		EDFC50DE292CD661002BEAD1 /* HeadNavView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDFC50DC292CD661002BEAD1 /* HeadNavView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,8 +112,9 @@
 		ED0CE252292B97D9009D8662 /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		ED0CE254292B97D9009D8662 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		ED0CE25A292B9943009D8662 /* ShoppingCartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartCoordinator.swift; sourceTree = "<group>"; };
-		EDA5A193292B5A090084230E /* HeadNavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadNavView.swift; sourceTree = "<group>"; };
-		EDA5A195292B5A270084230E /* HeadNavView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeadNavView.xib; sourceTree = "<group>"; };
+		ED0CE260292BA9DC009D8662 /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
+		ED0CE262292BAA01009D8662 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		ED0CE265292BAB12009D8662 /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 		EDD5697D292A1FC50066236B /* SalamtakApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SalamtakApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDD56984292A1FC50066236B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EDD56987292A1FC50066236B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -151,9 +154,8 @@
 		EDD569D4292A20810066236B /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EDD569D5292A20810066236B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EDD569D6292A20810066236B /* NetworkHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
-		EDD569D7292A20810066236B /* UIVC_Blur_Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIVC_Blur_Ext.swift; sourceTree = "<group>"; };
 		EDD569D8292A20810066236B /* Result_Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result_Error.swift; sourceTree = "<group>"; };
-		EDD569D9292A20810066236B /* Card View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Card View.swift"; sourceTree = "<group>"; };
+		EDD569D9292A20810066236B /* LocalizedUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedUIView.swift; sourceTree = "<group>"; };
 		EDD569DA292A20810066236B /* UIVC_Alert_Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIVC_Alert_Ext.swift; sourceTree = "<group>"; };
 		EDD569DB292A20810066236B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		EDD569DC292A20810066236B /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
@@ -187,6 +189,8 @@
 		EDD56A07292A20820066236B /* HomeVM+Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HomeVM+Presenter.swift"; sourceTree = "<group>"; };
 		EDD56A42292A213C0066236B /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		EDD56A45292A31A60066236B /* Observer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
+		EDFC50DB292CD661002BEAD1 /* HeadNavView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadNavView.swift; sourceTree = "<group>"; };
+		EDFC50DC292CD661002BEAD1 /* HeadNavView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeadNavView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,13 +300,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		EDA5A18E292B59530084230E /* HeadView */ = {
+		ED0CE264292BAAF1009D8662 /* ScreensHelper */ = {
 			isa = PBXGroup;
 			children = (
-				EDA5A193292B5A090084230E /* HeadNavView.swift */,
-				EDA5A195292B5A270084230E /* HeadNavView.xib */,
+				ED0CE260292BA9DC009D8662 /* Pagination.swift */,
+				ED0CE262292BAA01009D8662 /* Presenter.swift */,
+				ED0CE265292BAB12009D8662 /* Interactor.swift */,
 			);
-			path = HeadView;
+			path = ScreensHelper;
 			sourceTree = "<group>";
 		};
 		EDD56974292A1FC50066236B = {
@@ -439,9 +444,8 @@
 			children = (
 				EDD569D3292A20810066236B /* Localizable.strings */,
 				EDD569D6292A20810066236B /* NetworkHelper.swift */,
-				EDD569D7292A20810066236B /* UIVC_Blur_Ext.swift */,
 				EDD569D8292A20810066236B /* Result_Error.swift */,
-				EDD569D9292A20810066236B /* Card View.swift */,
+				EDD569D9292A20810066236B /* LocalizedUIView.swift */,
 				EDD569DA292A20810066236B /* UIVC_Alert_Ext.swift */,
 				EDD569DB292A20810066236B /* Extensions.swift */,
 				EDD569DC292A20810066236B /* UIImage.swift */,
@@ -454,7 +458,8 @@
 		EDD569DF292A20820066236B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				EDA5A18E292B59530084230E /* HeadView */,
+				ED0CE264292BAAF1009D8662 /* ScreensHelper */,
+				EDFC50DA292CD661002BEAD1 /* HeadView */,
 				ED031844292B87E8001264F6 /* Alert */,
 				EDD569E0292A20820066236B /* ShoppingCartScreen */,
 				EDD569F4292A20820066236B /* HomeVC */,
@@ -508,6 +513,15 @@
 				EDD56A45292A31A60066236B /* Observer.swift */,
 			);
 			path = DataBinding;
+			sourceTree = "<group>";
+		};
+		EDFC50DA292CD661002BEAD1 /* HeadView */ = {
+			isa = PBXGroup;
+			children = (
+				EDFC50DB292CD661002BEAD1 /* HeadNavView.swift */,
+				EDFC50DC292CD661002BEAD1 /* HeadNavView.xib */,
+			);
+			path = HeadView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -630,7 +644,7 @@
 				EDD56A34292A20820066236B /* ShoppingCartCell.xib in Resources */,
 				EDD56A3A292A20820066236B /* MedicationCell.xib in Resources */,
 				ED031848292B87E8001264F6 /* AlertVC.xib in Resources */,
-				EDA5A196292B5A270084230E /* HeadNavView.xib in Resources */,
+				EDFC50DE292CD661002BEAD1 /* HeadNavView.xib in Resources */,
 				EDD56A37292A20820066236B /* HomeVC.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -704,11 +718,11 @@
 				EDD56A08292A20820066236B /* RootClass.swift in Sources */,
 				EDD56A14292A20820066236B /* Constants.swift in Sources */,
 				EDD56A1E292A20820066236B /* AppDelegate_S.swift in Sources */,
+				ED0CE266292BAB12009D8662 /* Interactor.swift in Sources */,
 				EDD56A1B292A20820066236B /* UIWindow_S.swift in Sources */,
 				ED0CE256292B97D9009D8662 /* Storyboarded.swift in Sources */,
 				EDD56A27292A20820066236B /* UIImage.swift in Sources */,
 				EDD56A09292A20820066236B /* Complaint.swift in Sources */,
-				EDD56A22292A20820066236B /* UIVC_Blur_Ext.swift in Sources */,
 				EDD56A18292A20820066236B /* API_Post.swift in Sources */,
 				EDD56A12292A20820066236B /* UIVisualEffectViewX.swift in Sources */,
 				EDD56A23292A20820066236B /* Result_Error.swift in Sources */,
@@ -724,11 +738,11 @@
 				EDD56A10292A20820066236B /* UIImageViewX.swift in Sources */,
 				EDD56A35292A20820066236B /* ShoppingCartCell.swift in Sources */,
 				EDD56A39292A20820066236B /* MedicationCell.swift in Sources */,
-				EDA5A194292B5A090084230E /* HeadNavView.swift in Sources */,
 				EDD56A21292A20820066236B /* NetworkHelper.swift in Sources */,
 				EDD56A29292A20820066236B /* L102Language.swift in Sources */,
 				EDD56A11292A20820066236B /* UIViewX.swift in Sources */,
 				EDD56A1F292A20820066236B /* SceneDelegate.swift in Sources */,
+				EDFC50DD292CD661002BEAD1 /* HeadNavView.swift in Sources */,
 				EDD56A1C292A20820066236B /* AppDelegate.swift in Sources */,
 				EDD56A0A292A20820066236B /* UIViewXRadialGradient.swift in Sources */,
 				EDD56A3B292A20820066236B /* HomeVC+Delegation.swift in Sources */,
@@ -737,12 +751,14 @@
 				EDD56A36292A20820066236B /* HomeVC+SearchBarDelegate.swift in Sources */,
 				EDD56A0E292A20820066236B /* UIViewAnchorPoint.swift in Sources */,
 				EDD56A2E292A20820066236B /* ShoppingCartVC.swift in Sources */,
+				ED0CE263292BAA01009D8662 /* Presenter.swift in Sources */,
 				ED0CE25B292B9943009D8662 /* ShoppingCartCoordinator.swift in Sources */,
 				EDD56A41292A20820066236B /* HomeVM+Presenter.swift in Sources */,
 				EDD56A2B292A20820066236B /* ShoppingCartVC+SearchBarDelegation.swift in Sources */,
 				EDD56A2F292A20820066236B /* ShoppingCartVC+Delegation.swift in Sources */,
 				EDD56A31292A20820066236B /* CartViewModel+Interactor.swift in Sources */,
 				EDD56A3F292A20820066236B /* HomeVC+Collection.swift in Sources */,
+				ED0CE261292BA9DC009D8662 /* Pagination.swift in Sources */,
 				EDD56A0D292A20820066236B /* UILabelX.swift in Sources */,
 				EDD56A1A292A20820066236B /* APIClient_Ext.swift in Sources */,
 				EDD56A17292A20820066236B /* API_Get.swift in Sources */,
@@ -752,7 +768,7 @@
 				EDD56A2D292A20820066236B /* ShoppingCartVC+DataSource.swift in Sources */,
 				EDD56A28292A20820066236B /* SelfSizingTableView.swift in Sources */,
 				EDD56A15292A20820066236B /* APIClient.swift in Sources */,
-				EDD56A24292A20820066236B /* Card View.swift in Sources */,
+				EDD56A24292A20820066236B /* LocalizedUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -889,6 +905,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -949,6 +966,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

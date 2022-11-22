@@ -9,9 +9,9 @@ import UIKit
 
 protocol AnyMedicationView:AnyView{
     
+//    func initialState(viewModel:AnyMedicationViewModel)
     var homeViewModel: AnyMedicationViewModel? {get set}
-//    func collectionViewDidLoad(isScrollToTop:Bool)
-    
+
 }
 
 class HomeVC: UIViewController {
@@ -22,8 +22,10 @@ class HomeVC: UIViewController {
     @IBOutlet weak var homeCollection : UICollectionView!
     @IBOutlet weak var headView: HeadNavView!
     
-    var homeViewModel: AnyMedicationViewModel?
-    
+     var homeViewModel: AnyMedicationViewModel?
+//    func initialState(viewModel:AnyMedicationViewModel) {
+//        self.homeViewModel = viewModel
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +35,44 @@ class HomeVC: UIViewController {
         setupBinder()
         homeViewModel?.viewDidLoad()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+        homeViewModel?.viewWillAppear()
+    }
+    
+    
+    // MARK: - Setup Collection
+    private func setup_Collection() {
+        
+        homeCollection.delegate = self
+        homeCollection.dataSource = self
+        homeCollection.register(UINib(nibName: "MedicationCell", bundle: nil), forCellWithReuseIdentifier: "MedicationCell")
+    }
 
+    @IBAction func checkoutOrder(_ sender: UIButton) {
+        homeViewModel?.saveMedicines()
+    }
+    
+    
+    @IBAction func changeLanguage(_ sender: UIButton) {
+        
+        homeViewModel?.changeLanguage()
+    }
+    @IBAction func routeToCartVC(_ sender: UIButton) {
+        homeViewModel?.routeToNextVC()
+    }
+    
+    func updateCountOfSelectedItems(numOfItems:Int,totalPrice:String){
+        cartBttn.setTitle("\(numOfItems)".localized, for: .normal)
+
+        totalPriceLabel.text = totalPrice
+        cartInfoView.isHidden = numOfItems <= 0
+    }
+    
+    
+  
     
     func setupBinder(){
         homeViewModel?.tupleOf_totalPrice_arrOfItemsCount.bind{
@@ -43,13 +82,18 @@ class HomeVC: UIViewController {
                 strongSelf.updateCountOfSelectedItems(numOfItems: tuple.arrOfItemsCount.reduce(0,+), totalPrice: tuple.totalPriceText)
             }
         }
-//        homeViewModel?.isReloadCollection.bind{
-//            [weak self] isReloadCollection in
-//            guard let strongSelf = self else{return}
-//            DispatchQueue.main.async{
-//                strongSelf.collectionViewWillLoad()
-//            }
-//        }
+        homeViewModel?.accessCoreDataSuccessState.bind{
+            [weak self] coreDataSuccessState in
+            guard let strongSelf = self else{return}
+            DispatchQueue.main.async{
+                if coreDataSuccessState == .create{
+                    strongSelf.show_Popup(body: "Success Saving", type: .single, status: .success)}
+            }
+            if coreDataSuccessState == .update{
+                strongSelf.show_Popup(body: "Success Updating", type: .single, status: .success)}
+        }
+        
+        
         homeViewModel?.tupleOf_isScrollTag_isShowActivityView.bind{
             [weak self] tuple in
             guard let strongSelf = self else{return}
@@ -75,42 +119,6 @@ class HomeVC: UIViewController {
             }
         }
     }
-        
-    // MARK: - Setup Collection
-    private func setup_Collection() {
-        
-        homeCollection.delegate = self
-        homeCollection.dataSource = self
-        homeCollection.register(UINib(nibName: "MedicationCell", bundle: nil), forCellWithReuseIdentifier: "MedicationCell")
-    }
-
-    @IBAction func checkoutOrder(_ sender: UIButton) {
-        homeViewModel?.saveMedicines()
-    }
-    
-    
-    @IBAction func changeLanguage(_ sender: UIButton) {
-        
-        homeViewModel?.changeLanguage()
-    }
-    @IBAction func routeToCartVC(_ sender: UIButton) {
-        homeViewModel?.routeToNextVC()
-    }
-    
-    func updateCountOfSelectedItems(numOfItems:Int,totalPrice:String){
-        cartBttn.setTitle("\(numOfItems)", for: .normal)
-
-        totalPriceLabel.text = totalPrice
-        cartInfoView.isHidden = numOfItems <= 0
-    }
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-        homeViewModel?.viewWillAppear()
-    }
-    
    
     
     /*
@@ -127,6 +135,7 @@ class HomeVC: UIViewController {
 extension HomeVC:AnyMedicationView{
    
     func loadMedications() {
+        headView.backBttn.isHidden = true
         setup_Collection()
 //        initSearchBar()
         headView.searchBar.delegate = self
@@ -143,10 +152,6 @@ extension HomeVC:AnyMedicationView{
         }
         }
     
-//    func collectionViewWillLoad(){
-//            showActivityView(isShow: true)
-//    }
-    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let  height = scrollView.frame.size.height
         let contentYoffset = scrollView.contentOffset.y
@@ -155,7 +160,7 @@ extension HomeVC:AnyMedicationView{
             homeViewModel?.appendGroupOfMedicines()
         }
         if contentYoffset == .zero{
-            homeViewModel?.viewDidLoad()
+            homeViewModel?.reloadCollection()
         }
     }
     

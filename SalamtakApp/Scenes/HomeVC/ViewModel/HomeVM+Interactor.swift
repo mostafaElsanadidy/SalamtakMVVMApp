@@ -12,24 +12,12 @@ import Foundation
 // ref to ViewModel
 
 
-protocol AnyInteractor{
-    
-//    func deleteMedicines(where itemName: String)
-//    func searchMedicines(with searchTuple:(key:String,text:String))
-//    func readMedicines()
-    func updateMedicine(at index:Int,with newQuantity:Int)
-}
 
-extension AnyMedicationViewModel {
-
-//    var ViewModel: AnyMedicationViewModel?{get set}
-    
-}
 
 extension MedicationViewModel{
     
     
-    
+    // MARK: - Get My Medicines Data
     func getMedicines(indexFrom: String, IndexTo: String, searchKey: String) {
         APIClient.searchForRecipe(indexFrom: indexFrom, indexTo: IndexTo, serchKey: searchKey){[unowned self] (result) in
             switch result {
@@ -42,27 +30,6 @@ extension MedicationViewModel{
         }
     }
     
-    
-    // MARK: - Get My Recipes Data
-    func getStringFromArr(strArr:[String],separator:String) -> String
-      {
-          var dataStr = ""
-        
-          for (key,value) in strArr.enumerated()
-          {
-              dataStr += "\(value)"
-              if key < strArr.count-1 {
-                  dataStr += separator
-              }
-          }
-          return dataStr
-      }
-    
-    
-    //MARK: - the R in the word CRUD
-    
-    
-    //MARK: - the U in the word CRUD
 }
 
 extension MedicationViewModel{
@@ -110,11 +77,12 @@ extension MedicationViewModel{
             case .success(let value) :
                 guard let medicines_data = value else { return  }
                 let nowDate = Date()
-                let threeDaysAgoDate = Calendar.current.date(byAdding: .minute , value: -3, to: nowDate)!
+                let threeDaysAgoDate = Calendar.current.date(byAdding: .day , value: -3, to: nowDate)!
+                
                 let toBeRemovedMedicines = medicines_data.filter { !($0.createdDate ?? Date() <= threeDaysAgoDate) }
-
+                
                 if toBeRemovedMedicines.count < medicines_data.count{
-                    managedObjectHandler?.removeNotificationsOlderThan(days: 3)
+                    managedObjectHandler?.removeMedicinesOlderThan(days: 3)
                 }
                 self.interactorDidAccessCoreData(with: .success(toBeRemovedMedicines), state: .read)
 

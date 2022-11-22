@@ -71,12 +71,12 @@ enum APIRouter: URLRequestConvertible {
     func asURLRequest() throws -> URLRequest {
         var main_api_url = ""
         main_api_url = Constants.ProductionServer.baseURL + path
-//        print(main_api_url)
+
         let urlComponents = URLComponents(string: main_api_url)!
         let url = urlComponents.url!
         var urlRequest = URLRequest(url: url)
         
-//        print("URLS REQUEST :\(urlRequest)")
+
         
         // HTTP Method
 //        urlRequest.httpMethod = method.rawValue
@@ -90,7 +90,7 @@ enum APIRouter: URLRequestConvertible {
         // Parameters
         if let parameters = parameters {
             do {
-//                print(parameters)
+
                 urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
 
             } catch {
@@ -107,7 +107,7 @@ enum APIRouter: URLRequestConvertible {
 
 
         
-        return urlRequest as URLRequest
+//        return urlRequest as URLRequest
         
 
     }

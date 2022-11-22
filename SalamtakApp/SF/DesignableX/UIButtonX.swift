@@ -75,7 +75,6 @@ class UIButtonX: UIButton, UIActionSheetDelegate {
             endPoint = CGPoint(x: (startPoint!.x+self.frame.width)-offset, y: bezierPathY)
     
     
-        
         path.move(to: startPoint!)
         path.addLine(to: endPoint!)
            

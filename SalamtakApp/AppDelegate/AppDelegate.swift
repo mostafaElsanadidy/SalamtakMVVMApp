@@ -16,10 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-//        let solution = Solution()
-//        print(solution.getMinIntialBalance(R: "BAABA", v: [2,4,1,1,2]))
         MOLHLanguage.setDefaultLanguage(MOLHLanguage.currentAppleLanguage() == "en" ? "en" : "ar")
-//        UIView.appearance().semanticContentAttribute = .forceLeftToRight
         MOLH.shared.activate(true)
         return true
     }

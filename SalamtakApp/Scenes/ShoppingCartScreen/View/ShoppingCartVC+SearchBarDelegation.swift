@@ -15,8 +15,6 @@ extension ShoppingCartVC:UISearchBarDelegate{
         
         medicinesTableView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
             cartViewModel?.searchKey = searchText
-            
-            cartViewModel?.appendGroupOfMedicines()
     }
     
     

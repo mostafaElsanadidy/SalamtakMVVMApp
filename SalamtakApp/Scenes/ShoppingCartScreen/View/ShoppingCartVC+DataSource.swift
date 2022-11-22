@@ -47,19 +47,6 @@ extension ShoppingCartVC:UITableViewDataSource{
             
             
         }
-       
-//        if let medicine = self.ViewModel?.medicines[indexPath.row]{
-//
-//                cell.nameLabel.text = "lang".localized == "en" ? medicine.enName : medicine.arName
-//            
-//                let originalUrl = (medicine.picUrl ?? "")
-//                let updatedUrl = originalUrl.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
-//                 if let sp_url = URL(string: updatedUrl ?? "")
-//                {
-//                    cell.medicineImageView.kf.indicatorType = .activity
-//                    cell.medicineImageView.kf.setImage(with: sp_url)}
-//
-//        }
         
         return cell
     }

@@ -16,7 +16,7 @@ class APIClient {
     static func performSwiftyRequest(route:APIRouter,_ completion:@escaping (JSON)->Void,_ failure:@escaping (Error?)->Void) -> DataRequest {
         
         return AF.request(route).response{ (response) in
-//            print(response)
+
                    switch response.result {
                    case .success :
                     guard let _ = response.value
@@ -24,10 +24,9 @@ class APIClient {
                            failure(response.error)
                            return
                        }
-//                       print(response.result , route.urlRequest as Any)
+
                        let json = JSON(response.value as Any)
-//                       print(json)
-                       
+                   
                        completion(json)
                       
                    case .failure( _):

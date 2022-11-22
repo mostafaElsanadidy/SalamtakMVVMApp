@@ -17,7 +17,7 @@ extension APIClient{
         ad.isLoading()
         performSwiftyRequest(route: .searchForMedicationItems(IndexFrom: indexFrom, IndexTo: indexTo, serchKey: serchKey), { (jsonData) in
             let json = JSON(jsonData)
-//            print("Json is \(json)")
+
             guard let success = json["Success"].bool, !success else {
                
                 DispatchQueue.main.async {
@@ -27,7 +27,7 @@ extension APIClient{
                 }
                 return
             }
-//            print(success)
+
             ad.killLoading()
 //            "please check connecting to internet and try again"
 //            let sms = getError(json: json)
@@ -37,7 +37,7 @@ extension APIClient{
         }, _: { (error) in
             ad.killLoading()
             DispatchQueue.main.async {
-                ad.CurrentRootVC()?.show_Popup(body: String(describing: (error as? NSError)?.code) , type: .single, status: .failure)
+                ad.CurrentRootVC()?.show_Popup(body: (error as? NSError)?.localizedDescription ?? "" , type: .single, status: .failure)
                 completionHandler(.failure(.req_Failure))
             }
         })

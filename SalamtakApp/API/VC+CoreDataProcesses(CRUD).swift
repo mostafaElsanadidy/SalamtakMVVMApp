@@ -17,7 +17,7 @@ protocol AnyCoreDataHandler {
     func saveItems(afterSaving executionHandler:(Result<[T]? , Result_Error>) -> Void)
     func searchForItem(with searchTuple:(key:String,text:String), parent parentItem:(key:String,name:String)?, initialRequest: U,didEndSearching handler:@escaping (Result<[T]? , Result_Error>) -> Void)
     func loadItems(with request: U, parent parentItem:(key:String,name:String)?, didEndLoading handler:(Result<[T]? , Result_Error>) -> Void)
-    func updateItem(didBeginUpdating updateHandler:([T])->(), didEndUpdating afterUpdateHandler: (Result<[T]? , Result_Error>) -> Void)
+    func updateItem(didBeginUpdating updateHandler:([T])->(), didEndUpdating afterUpdateHandler: @escaping (Result<[T]? , Result_Error>) -> Void)
     func deleteItems(at index:Int,afterDelete executionHandler: (Result<[T]? , Result_Error>) -> Void)
 }
 //
@@ -27,20 +27,8 @@ class CoreDataHandler<T:NSManagedObject>:AnyCoreDataHandler {
     
     var items: [T] = []
     var entityName:String{
-        print(T.description().components(separatedBy: "."))
         return T.description().components(separatedBy: ".").last! }
     typealias U = NSFetchRequest<T>
-   
-    //MARK: - DEFAULT HANDLER
-//    var defaultHandler: ()->() {
-//        get {
-//            return self.defaultHandler
-//        }
-//        set {
-//            self.defaultHandler = newValue
-//        }
-//    }
-    
    
     //MARK: - the D in the word CRUD
     func deleteItems(at index:Int,afterDelete executionHandler:(Result<[T]? , Result_Error>) -> Void) {
@@ -55,7 +43,7 @@ class CoreDataHandler<T:NSManagedObject>:AnyCoreDataHandler {
             try viewContext.save()
             executionHandler(.success(items))
         } catch {
-//            print("Error Savinng Context".localized+"\(error)")
+
             executionHandler(.failure(.status_Failure))
         }
     }
@@ -75,7 +63,7 @@ class CoreDataHandler<T:NSManagedObject>:AnyCoreDataHandler {
        
         
         request.sortDescriptors = [NSSortDescriptor(key: "\(searchTuple.key)", ascending: true)]
-//        print(request)
+
         loadItems(with: request, parent: nil, didEndLoading: handler)
     }
     
@@ -89,24 +77,24 @@ class CoreDataHandler<T:NSManagedObject>:AnyCoreDataHandler {
                 request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [parentRestaurantPredicate])
             }
 
-            print(request)
+            
             items = try viewContext.fetch(request)
-//            viewContext.exe
+
             handler(.success(items))
             
         }
         catch {
-            print("Error Loading Data From Context".localized + "\(error)")
+           
             handler(.failure(.status_Failure))
         }
     }
     
     //MARK: - the U in the word CRUD
-    func updateItem(didBeginUpdating updateHandler:([T])->(), didEndUpdating afterUpdateHandler:(Result<[T]? , Result_Error>) -> Void) {
+    func updateItem(didBeginUpdating updateHandler:([T])->(), didEndUpdating afterUpdateHandler:@escaping (Result<[T]? , Result_Error>) -> Void) {
        
         updateHandler(items)
-       
-        saveItems(afterSaving: afterUpdateHandler)
+        DispatchQueue.main.asyncAfter(deadline: .now()+1){
+            self.saveItems(afterSaving: afterUpdateHandler)}
     }
     
     func updateAllItemsInOneGo() {
@@ -120,17 +108,17 @@ class CoreDataHandler<T:NSManagedObject>:AnyCoreDataHandler {
           let batchResult =
             try viewContext.execute(batchUpdate)
               as! NSBatchUpdateResult
-          print("Records updated \(batchResult.result!)")
+//          print("Records updated \(batchResult.result!)")
         } catch let error as NSError {
-          print("Could not update \(error), \(error.userInfo)")
+//          print("Could not update \(error), \(error.userInfo)")
         }
     }
     
-    func removeNotificationsOlderThan(days: Int) {
+    func removeMedicinesOlderThan(days: Int) {
         let privateContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         privateContext.persistentStoreCoordinator = viewContext.persistentStoreCoordinator
         // Calculate the limit date for a record to be valid by using the days parameter of your method:
-        let limitDate = Calendar.current.date(byAdding: .minute, value: -days, to: Date())
+        let limitDate = Calendar.current.date(byAdding: .day, value: -days, to: Date())
         // Create a predicate that match this date:
         let predicate = NSPredicate(format: "createdDate <= %@", limitDate! as NSDate)
         // Initialize the NSFetchRequest:

@@ -8,12 +8,6 @@
 import Foundation
 import CoreData
 
-//protocol AnyCartInteractor:AnyInteractor{
-//    var ViewModel: AnyCartViewModel?{get set}
-//
-//}
-
-
 extension CartViewModel{
     
    
@@ -27,6 +21,7 @@ extension CartViewModel{
                     selectedMedicine.arName = medicine.arName
                     selectedMedicine.price = medicine.price
                     selectedMedicine.quantity = Int16(quantity)
+                    selectedMedicine.createdDate = Date()
         managedObjectHandler?.saveItems(afterSaving: {
             [unowned self]
             result in
@@ -44,8 +39,7 @@ extension CartViewModel{
 
     func deleteMedicines(where itemName: String) {
         let index = managedObjectHandler?.items.firstIndex(where: {
-//            "lang".localized == "en" ? ($0.enName == itemName) : ($0.arName == itemName)
-            ($0.enName == itemName)
+            "lang".localized == "en" ? ($0.enName == itemName) : ($0.arName == itemName)
             })
           managedObjectHandler?.deleteItems(at:
                                                 index ?? 0
@@ -88,7 +82,13 @@ extension CartViewModel{
                 self.interactorDidAccessCoreData(with: .failure(error),state: .read)
             case .success(let value) :
                 guard let medicines_data = value else { return  }
-                self.interactorDidAccessCoreData(with: .success(medicines_data), state: .read)
+                let nowDate = Date()
+                let threeDaysAgoDate = Calendar.current.date(byAdding: .day , value: -3, to: nowDate)!
+                let toBeRemovedMedicines = medicines_data.filter { !($0.createdDate ?? Date() <= threeDaysAgoDate) }
+                if toBeRemovedMedicines.count < medicines_data.count{
+                    managedObjectHandler?.removeMedicinesOlderThan(days: 3)
+                }
+                self.interactorDidAccessCoreData(with: .success(toBeRemovedMedicines), state: .read)
 
             }
         }
@@ -97,7 +97,7 @@ extension CartViewModel{
     func updateMedicine(at index:Int,with newQuantity:Int) {
         managedObjectHandler?.updateItem(didBeginUpdating: {
             medicines in
-            medicines[0].quantity = Int16(newQuantity)
+            medicines[index].quantity = Int16(newQuantity)
         }, didEndUpdating: {
             [unowned self]
             result in

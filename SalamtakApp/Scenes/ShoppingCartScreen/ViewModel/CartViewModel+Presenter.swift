@@ -9,93 +9,30 @@ import Foundation
 import CoreData
 import MOLH
 
-protocol AnyCartViewModel:AnyPresenter,AnyInteractor {
-    
-//    var router: AnyCartRouter? {get set}
-    var coordinator: ShoppingCatCoordinator? {get set}
-//    var interactor: AnyCartInteractor? {get set}
-//    var view:AnyCartView? {get set}
-    var arrOfItemsCount:[Int] {get set}
-    var medicines : [Medicine] {get set}
-    var limit:Int{get set}
-    var separateOrdersContainer:SeparateOrdersContainer<Medicine> {get set}
-    func updateCellInfo(medicineIndex:Int,collectionCellHandler:((MedicineContainer)->Void)?)
-    func updateMedicine(at index:Int,with quantity:Int)
-    func deleteItems(at index: Int)
-    func didReturnBttnTapped()
-    func saveMedicines(medicine:Medicine,quantity:Int)
-}
-
 class CartViewModel: AnyCartViewModel{
-    func didReturnBttnTapped() {
-//        router?.stop()
-    }
     
-  
-    func viewWillAppear() {
-        readMedicines()
-    }
+      var coordinator: ShoppingCatCoordinator?
+    
+    //MARK: - properties of Data Binding
+    
+    var accessCoreDataSuccessState: Observable<coreDataStatus> = Observable(.read)
     
     var error: Observable<Result_Error> = Observable(.status_Failure)
     
     var isRefreshScreenTag: Observable<Bool> = Observable(false)
   
-    var tupleOf_totalPrice_arrOfItemsCount: Observable<(totalPriceText: String, arrOfItemsCount: [Int])> = Observable((totalPriceText:"",arrOfItemsCount:[])){
-        
-        didSet{}
-    }
+    var tupleOf_totalPrice_arrOfItemsCount: Observable<(totalPriceText: String, arrOfItemsCount: [Int])> = Observable((totalPriceText:"",arrOfItemsCount:[]))
     
     var tupleOf_isScrollTag_isShowActivityView: Observable<(isScrollToTop:Bool,isShowActivityView:Bool)> = Observable((isScrollToTop:false,isShowActivityView:false))
     
-//    var router: AnyCartRouter?
+    //MARK: - properties of Pagination
     
-//    var interactor: AnyCartInteractor?{
-//        didSet{
-//        //    self.getMedicines(searchKey: "", healthParams: [""])
-//        }
-//    }
-    typealias ManagedObjectHandler = CoreDataHandler<Medicine>
-//    var ViewModel: AnyCartViewModel?
-    var managedObjectHandler:ManagedObjectHandler?
-    
-    
-    init() {
-        managedObjectHandler = ManagedObjectHandler()
-    }
-    
-//    var view: AnyCartView?
-    var medicineContainer = MedicineContainer()
-    var coordinator: ShoppingCatCoordinator?
-    var separateOrdersContainer = SeparateOrdersContainer<Medicine>()
-    {
-        didSet{
-            updateMedicines_Data(limit: separateOrdersContainer.limit)
-        }
-}
-    var isWantToUpdate:Bool = false
-    var searchKey: String = ""{
-        didSet{
-            if searchKey != oldValue{
-            if searchKey != ""{
-                let key = "lang".localized == "en" ? "enName" : "arName"
-                self.searchMedicines(with: (key:key,text:searchKey))
-            }
-                else{
-                    self.readMedicines()
-                }
-        }}
-    }
-    var selectedIndex:Int = 0
-    var totalPrice:Float = 0
     var limit: Int = 0{
         didSet{
             self.tupleOf_isScrollTag_isShowActivityView.value = (isScrollToTop:false,isShowActivityView:false)
         }
     }
-    func updateMedicines_Data(limit:Int){
-
-        self.limit = limit
-    }
+    
     var medicines : [Medicine] = []{
         didSet{
             medicines = medicines.sorted{
@@ -110,50 +47,64 @@ class CartViewModel: AnyCartViewModel{
         }
     }
     
+    var medicineContainer = MedicineContainer()
+    var separateOrdersContainer = SeparateOrdersContainer<Medicine>()
+    {
+        didSet{
+            updateMedicines_Data(limit: separateOrdersContainer.limit)
+        }
+}
+    var searchKey: String = ""{
+        didSet{
+            if searchKey != oldValue{
+                reloadCollection()
+            }}
+    }
+    
+    //MARK: - properties of CoreDataHandler
+    typealias ManagedObjectHandler = CoreDataHandler<Medicine>
+    var managedObjectHandler:ManagedObjectHandler?
+    
+    
+    init() {
+        managedObjectHandler = ManagedObjectHandler()
+    }
+    var isWantToUpdate:Bool = false
+    
+    var selectedIndex:Int = 0
+    var totalPrice:Float = 0
+   
+    //MARK: - viewDidLoad
     
     func viewDidLoad() {
         
         self.separateOrdersContainer.medicinesDidSet = { isScrollToTop,medicines in
             self.medicines = medicines
             self.tupleOf_isScrollTag_isShowActivityView.value = (isScrollToTop:isScrollToTop,isShowActivityView:false)
-//            self.view?.collectionViewDidLoad(isScrollToTop: isScrollToTop)
         }
-//        self.separateOrdersContainer.medicinesWillSet = self.view?.collectionViewWillLoad ?? {}
-        self.separateOrdersContainer.itemsCountDidSet = {_ in}
-        
-        self.isRefreshScreenTag.value = true
-//        self.readMedicines()
+                self.separateOrdersContainer.itemsCountDidSet = {_ in}
+                
+                self.isRefreshScreenTag.value = true
     }
     
+    func viewWillAppear() {
+        readMedicines()
+    }
     
-    func itemsCountDidSet(tuple:(items:[Medicine],counts:[Int])) -> Void {
-       
-        let prices = tuple.counts.enumerated()
-         .filter{$0.element != 0}
-            .map{(index, element) -> Float in
-                let medicine = tuple.items[index]
-                return Float(element) * (medicine.price )
+    func reloadCollection() {
+        if searchKey != ""{
+            let key = "lang".localized == "en" ? "enName" : "arName"
+            self.searchMedicines(with: (key:key,text:searchKey))
+        }
+            else{
+                self.readMedicines()
             }
-        self.totalPrice = prices.reduce(0,+)
-        self.tupleOf_totalPrice_arrOfItemsCount.value = (totalPriceText:strDidShortenPrice(price: totalPrice),arrOfItemsCount:tuple.counts)
-//        self.view?.updateCountOfSelectedItems(numOfItems: tuple.counts.reduce(0,+), totalPrice: strDidShortenPrice(price: totalPrice))
-    }
-    func appendGroupOfMedicines() {
-        self.separateOrdersContainer.isScrollToTop = false
-        self.medicines = {self.medicines}()
     }
     
-    func updateCellInfo(medicineIndex:Int,collectionCellHandler:((MedicineContainer)->Void)?){
-         
-        let medicine = separateOrdersContainer.arrOfSeparateOrders[medicineIndex]
-        self.medicineContainer.medicineNameText = "lang".localized == "en" ? (medicine.enName ?? "") : (medicine.arName ?? "")
-        self.medicineContainer.medicinePriceText = strDidShortenPrice(price: medicine.price)
-        let originalUrl = (medicine.picUrl ?? "")
-        let updatedUrl = originalUrl.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
-         let sp_url = URL(string: updatedUrl ?? "")
-        self.medicineContainer.medicinePicUrl = sp_url
-        collectionCellHandler?(medicineContainer)
+    func didReturnBttnTapped() {
+//        router?.stop()
     }
+    
     
     func changeLanguage() {
         MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "ar" : "en")
@@ -185,17 +136,9 @@ extension CartViewModel{
         }
     
 //    //    //MARK: - the R in the word CRUD
-//        func searchMedicines(with searchTuple:(key:String,text:String)){
-//
-//            self.searchMedicines(with: searchTuple)
-//        }
-    
+
 //        //MARK: - the U in the word CRUD
-//    func updateMedicine(at index:Int,with quantity:Int){
-//
-//            self.updateMedicine(at: index, with: quantity)
-//
-//        }
+
 //    //    //MARK: - the D in the word CRUD
 //
         func deleteItems(at index: Int) {
@@ -205,26 +148,11 @@ extension CartViewModel{
             _ = self.arrOfItemsCount.remove(at: index)
         }
     
-}
-
-extension CartViewModel{
-    
-    
-    func interactorDidFetchMedicines(with result: Result<[Medicine], Result_Error>) {
-        switch result {
-        case .failure(let error):
-            self.error.value = error
-//            self.view?.update(with: error)
-        case .success(let recipes_data):
-            self.update(with: recipes_data)
-        }
-    }
     
     func interactorDidAccessCoreData(with result: Result<[Medicine], Result_Error>, state: coreDataStatus) {
         switch result {
         case .failure(let error):
             self.error.value = error
-//            self.view?.update(with: error)
         case .success(let medicines_data):
         let medicines = medicines_data
         switch state {
@@ -248,16 +176,31 @@ extension CartViewModel{
             }
 //        case .read:
 //            self.interactorDidFetchMedicines(with: result)
+        case .create:
+            self.accessCoreDataSuccessState.value = .create
+        case .update:
+            self.accessCoreDataSuccessState.value = .update
         default:
             let _ = medicines.map{print( "lang".localized == "en" ? ($0.enName ?? "") : ($0.arName ?? "")
                 )}
         }
-        
             self.interactorDidFetchMedicines(with: result)
 //        view?.collectionViewDidLoad(isScrollToTop: true)
     }
     }
+}
+
+extension CartViewModel{
     
+    
+    func interactorDidFetchMedicines(with result: Result<[Medicine], Result_Error>) {
+        switch result {
+        case .failure(let error):
+            self.error.value = error
+        case .success(let recipes_data):
+            self.update(with: recipes_data)
+        }
+    }
     
     func update(with medicines: [Medicine]) {
         
@@ -271,4 +214,44 @@ extension CartViewModel{
             self.updateMedicines_Data(limit: medicines.count)
         }
     }
+    
+    
+    func updateMedicines_Data(limit:Int){
+        self.limit = limit
+//        appendGroupOfMedicines()
+    }
+    func appendGroupOfMedicines() {
+        self.separateOrdersContainer.isScrollToTop = false
+        self.medicines = {self.medicines}()
+    }
+    
+    func itemsCountDidSet(tuple:(items:[Medicine],counts:[Int])) -> Void {
+       
+        let prices = tuple.counts.enumerated()
+         .filter{$0.element != 0}
+            .map{(index, element) -> Float in
+                let medicine = tuple.items[index]
+                return Float(element) * (medicine.price )
+            }
+        self.totalPrice = prices.reduce(0,+)
+        self.tupleOf_totalPrice_arrOfItemsCount.value = (totalPriceText:strDidShortenPrice(price: totalPrice),arrOfItemsCount:tuple.counts)
+    }
+    
+}
+
+extension CartViewModel{
+    func updateCellInfo(medicineIndex:Int,collectionCellHandler:((MedicineContainer)->Void)?){
+         
+        let medicine = separateOrdersContainer.arrOfSeparateOrders[medicineIndex]
+        self.medicineContainer.medicineNameText = "lang".localized == "en" ? (medicine.enName ?? "") : (medicine.arName ?? "")
+        self.medicineContainer.medicinePriceText = strDidShortenPrice(price: medicine.price)
+        let originalUrl = (medicine.picUrl ?? "")
+        let updatedUrl = originalUrl.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
+         let sp_url = URL(string: updatedUrl ?? "")
+        self.medicineContainer.medicinePicUrl = sp_url
+        collectionCellHandler?(medicineContainer)
+    }
+   
+    
+    
 }

@@ -24,7 +24,6 @@ class ShoppingCartCell: SwipeTableViewCell{
         var numOfItems = 0{
             didSet{
                 quantityLabel.text = "\(numOfItems)"
-//                print(numOfItems)
                 updateQuantityPrice?(numOfItems, isPlusBttnClickedflag)
             }
         }
@@ -66,7 +65,6 @@ class ShoppingCartCell: SwipeTableViewCell{
         let count = Int(quantityLabel.text ?? "")
         let orderAmount = count != nil ? count : 0
         numOfItems = orderAmount! > 0 ? orderAmount! - 1 : orderAmount!
-//        print(numOfItems)
         sender.isUserInteractionEnabled = numOfItems != 0
     }
     

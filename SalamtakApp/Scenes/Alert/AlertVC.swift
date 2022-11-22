@@ -74,10 +74,6 @@ class AlertVC: UIViewController {
             self.bodyView.transform = .identity
         }, completion: nil)
         
-//        animate(withDuration: 0.3, animations: 0.2, completion: {[weak self] in
-//            guard let self = self else { return }
-//            self.bodyView.transform = .identity
-//        })
     }
     
     // MARK: - Animate Out
@@ -89,13 +85,6 @@ class AlertVC: UIViewController {
             self?.dismiss(animated: true, completion: nil)
             self?.completionHandler?(success)
         })
-//        UIView.animate(withDuration: 0.3) {[weak self] in
-//            guard let self = self else { return }
-//            self.bodyView.transform = CGAffineTransform(translationX: 0, y: 600)
-//        } completion: {[weak self] (_) in
-//            self?.dismiss(animated: true, completion: nil)
-//            self?.completionHandler?(success)
-//        }
     }
     
     // MARK: - Yes Button

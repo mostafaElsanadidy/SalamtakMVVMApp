@@ -11,8 +11,8 @@
 /* Class = "UILabel"; text = "Label"; ObjectID = "HMp-HD-rUD"; */
 "HMp-HD-rUD.text" = "Label";
 
-/* Class = "UIButton"; configuration.title = "تأكيد الطلب"; ObjectID = "V5F-ii-3zC"; */
-"V5F-ii-3zC.configuration.title" = "تأكيد الطلب";
+/* Class = "UIButton"; configuration.title = "Checkout"; ObjectID = "V5F-ii-3zC"; */
+"V5F-ii-3zC.configuration.title" = "Checkout";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "V5F-ii-3zC"; */
 "V5F-ii-3zC.normalTitle" = "Button";

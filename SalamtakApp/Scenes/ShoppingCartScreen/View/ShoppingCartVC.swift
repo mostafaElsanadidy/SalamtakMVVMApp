@@ -8,11 +8,7 @@
 import UIKit
 
 protocol AnyView {
-//    func loadMedications()
-//    func collectionViewDidLoad(isScrollToTop:Bool)
-//    func collectionViewWillLoad()
-//    func update(with error: Result_Error)
-//    func updateCountOfSelectedItems(numOfItems:Int,totalPrice:String)
+
 }
 
 protocol AnyCartView:AnyView{
@@ -32,15 +28,10 @@ class ShoppingCartVC: UIViewController {
     
     @IBOutlet weak var totalPriceView: UIViewX!
 
-
-//    var cartViewModel: AnyCartViewModel?
-    
-//    weak var coordinator : ShoppingCatCoordinator?
-  //  var availableMovies:[Movie_VM] = []
     internal var cartViewModel : AnyCartViewModel?
-    func initialState(viewModel:AnyCartViewModel) {
-        self.cartViewModel = viewModel
-    }
+//    func initialState(viewModel:AnyCartViewModel) {
+//        self.cartViewModel = viewModel
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +41,11 @@ class ShoppingCartVC: UIViewController {
         cartViewModel?.viewDidLoad()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+        cartViewModel?.viewWillAppear()
+    }
     
     func setupBinder(){
         cartViewModel?.tupleOf_totalPrice_arrOfItemsCount.bind{
@@ -59,20 +55,22 @@ class ShoppingCartVC: UIViewController {
                 strongSelf.updateCountOfSelectedItems(numOfItems: tuple.arrOfItemsCount.reduce(0,+), totalPrice: tuple.totalPriceText)
             }
         }
-//        cartViewModel?.isReloadCollection.bind{
-//            [weak self] isReloadCollection in
-//            guard let strongSelf = self else{return}
-//            DispatchQueue.main.async{
-//                strongSelf.collectionViewWillLoad()
-//            }
-//        }
+        cartViewModel?.accessCoreDataSuccessState.bind{
+            [weak self] coreDataSuccessState in
+            guard let strongSelf = self else{return}
+            DispatchQueue.main.async{
+                if coreDataSuccessState == .create{
+                    strongSelf.show_Popup(body: "Success Saving", type: .single, status: .success)}
+            }
+            if coreDataSuccessState == .update{
+                strongSelf.show_Popup(body: "Success Updating", type: .single, status: .success)}
+        }
         cartViewModel?.tupleOf_isScrollTag_isShowActivityView.bind{
             [weak self] tuple in
             guard let strongSelf = self else{return}
-            DispatchQueue.main.async{
-//                strongSelf.collectionViewWillLoad()
+           
                 strongSelf.collectionViewDidLoad(isScrollToTop: tuple.isScrollToTop, isShowActivityView: tuple.isShowActivityView)
-            }
+            
         }
         cartViewModel?.isRefreshScreenTag.bind{
             [weak self] isRefreshScreenTag in
@@ -112,29 +110,8 @@ class ShoppingCartVC: UIViewController {
         medicinesTableView.register(UINib(nibName: "ShoppingCartCell", bundle: nil), forCellReuseIdentifier: "ShoppingCartCell")
         
     }
-    
-//    func initSearchBar() {
-//
-//        searchBar.enablesReturnKeyAutomatically = false
-//        searchBar.returnKeyType = UIReturnKeyType.done
-//        searchBar.showsCancelButton = false
-//        searchBar.showsScopeBar = false
-////        searchBar.scopeButtonTitles = searchBarFilters
-//        searchBar.delegate = self
-//    }
-    
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-        cartViewModel?.viewWillAppear()
-    }
-
-//    @IBAction func didCardBttnTapped(_ sender: UIButton) {
-//        cartViewModel?.tupleOf_isScrollTag_isShowActivityView.value = (isScrollToTop:true,isShowActivityView:false)
-////        self.medicinesTableView.reloadData()
-////        medicinesTableView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
-//    }
+  
     
     @IBAction func didReturnBttnTapped(_ sender: UIButton) {
         self.cartViewModel?.didReturnBttnTapped()
@@ -160,6 +137,9 @@ extension ShoppingCartVC:AnyCartView{
     func loadMedications() {
         setup_Collection()
 //        initSearchBar()
+        if let lbl = headView.viewWithTag(100) as? UILabel{
+            lbl.text = "ShoppingCart"
+        }
         headView.searchBar.delegate = self
     }
     
@@ -169,7 +149,8 @@ extension ShoppingCartVC:AnyCartView{
         guard !isShowActivityView else {
             return
         }
-           medicinesTableView.reloadData()
+          
+        medicinesTableView.reloadData()
         medicinesTable_View.isHidden = (cartViewModel?.limit ?? 0) == 0
         totalPriceView.isHidden = (cartViewModel?.limit ?? 0) == 0
         
@@ -177,11 +158,7 @@ extension ShoppingCartVC:AnyCartView{
             medicinesTableView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)}
         }
     
-//    func collectionViewWillLoad(){
-//
-//            showActivityView(isShow: true)
-//    }
-    
+
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let  height = scrollView.frame.size.height
         let contentYoffset = scrollView.contentOffset.y
@@ -189,6 +166,9 @@ extension ShoppingCartVC:AnyCartView{
         if Int(distanceFromBottom) <= Int(height) { // when you reach the bottom
             cartViewModel?.appendGroupOfMedicines()
         }
+//        if contentYoffset == .zero{
+//            cartViewModel?.reloadCollection()
+//        }
     }
     
     func update(with error: Result_Error) {

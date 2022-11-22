@@ -68,14 +68,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate,MOLHResetable {
     }
     
     func redirect_To_MainVC(window:UIWindow){
-//    var router = MedicationRouter.start()
-//    let initialVC = router.entry
-//
-//    let viewController = initialVC
+
     let navController = UINavigationController()
     let coordinator = MainCoordinator.init(navigationController: navController)
         coordinator.start()
-//    router.navigationController = navController
+
     navController.isNavigationBarHidden = true
     window.rootViewController = navController
     self.window = window

@@ -23,8 +23,6 @@ class Complaint{
     var code : String!
     var indexCount : Int!
     var pagesCount : Int!
-//    marketing , soctt ( video calling ) , push notifications , parsing data from json ( integer,string ) , handle with two api , (xip view) , online paying , know when user add to cart , userdefaults , rxswifr instead of observer , ecommerce
-    
     /**
      * Instantiate the instance using the passed json values to set the properties values
      */

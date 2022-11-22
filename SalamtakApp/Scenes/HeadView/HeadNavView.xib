@@ -4,12 +4,13 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeadNavView" customModule="SalamtakApp" customModuleProvider="target">
             <connections>
-                <outlet property="backBttn" destination="Egc-el-Om9" id="eqf-pq-a6Y"/>
+                <outlet property="backBttn" destination="3ON-UE-2NE" id="YR7-qO-y9s"/>
                 <outlet property="containerView" destination="6PH-Da-4SU" id="fw2-Xh-Ood"/>
                 <outlet property="searchBar" destination="RS1-X6-ndT" id="xVA-xE-BGZ"/>
             </connections>
@@ -22,19 +23,16 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2vS-Zc-Rky">
                     <rect key="frame" x="10" y="0.0" width="394" height="100"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wwL-oH-c45">
-                            <rect key="frame" x="0.0" y="0.0" width="394" height="35"/>
+                        <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wwL-oH-c45">
+                            <rect key="frame" x="0.0" y="-35" width="394" height="35"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Egc-el-Om9">
                                     <rect key="frame" x="0.0" y="2" width="45.5" height="31"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="arrow.left" catalog="system"/>
-                                    <connections>
-                                        <action selector="popToPreviousScreen:" destination="-1" eventType="touchUpInside" id="Hk6-B8-rOV"/>
-                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TwO-TQ-iti">
-                                    <rect key="frame" x="166" y="7.5" width="53.5" height="20.5"/>
+                                    <rect key="frame" x="166" y="7" width="53.5" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -49,8 +47,43 @@
                                 <constraint firstAttribute="height" constant="35" id="6lF-yq-xiR"/>
                             </constraints>
                         </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Q4Q-CI-Fo0">
+                            <rect key="frame" x="0.0" y="0.0" width="394" height="31"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ON-UE-2NE">
+                                    <rect key="frame" x="0.0" y="0.0" width="45.5" height="31"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="arrow.left" catalog="system"/>
+                                    <connections>
+                                        <action selector="popToPreviousScreen:" destination="-1" eventType="touchUpInside" id="brY-dt-KHc"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5OY-kh-lGp">
+                                    <rect key="frame" x="101.5" y="0.0" width="0.0" height="31"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8sa-wC-MFt">
+                                    <rect key="frame" x="157.5" y="0.0" width="236.5" height="31"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSa-GR-crI">
+                                            <rect key="frame" x="0.0" y="0.0" width="53.5" height="31"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56S-t6-DyB">
+                                            <rect key="frame" x="182.5" y="0.0" width="54" height="31"/>
+                                            <state key="normal" title="Button" backgroundImage="r.square.on.square" catalog="system"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="bubble.left.and.exclamationmark.bubble.right" catalog="system"/>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
                         <searchBar contentMode="redraw" searchBarStyle="minimal" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RS1-X6-ndT">
-                            <rect key="frame" x="30" y="45" width="334" height="55"/>
+                            <rect key="frame" x="30" y="41" width="334" height="59"/>
                             <textInputTraits key="textInputTraits"/>
                             <scopeButtonTitles>
                                 <string>Title</string>
@@ -74,6 +107,8 @@
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="RS1-X6-ndT" secondAttribute="trailing" constant="30" id="LvU-mb-bHv"/>
                         <constraint firstAttribute="trailing" secondItem="wwL-oH-c45" secondAttribute="trailing" id="Ozc-Jp-PDa"/>
+                        <constraint firstItem="8sa-wC-MFt" firstAttribute="width" secondItem="2vS-Zc-Rky" secondAttribute="width" multiplier="0.6" id="YAH-OP-qYs"/>
+                        <constraint firstAttribute="trailing" secondItem="Q4Q-CI-Fo0" secondAttribute="trailing" id="b08-L7-h6H"/>
                     </constraints>
                 </stackView>
             </subviews>

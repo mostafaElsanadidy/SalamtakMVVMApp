@@ -14,9 +14,10 @@ protocol Coordinator:AnyObject {
     var navigationController : UINavigationController {get set}
     func start()
 }
-//protocol NavigationPerformActionDelegate {
-//    func didPerformAction(with data:AnyObject)
-//}
+
+protocol NavigationPerformActionDelegate {
+    func didPerformAction(with data:AnyObject)
+}
 
 
 

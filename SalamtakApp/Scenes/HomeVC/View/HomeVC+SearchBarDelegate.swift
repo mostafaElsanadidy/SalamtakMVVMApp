@@ -15,11 +15,7 @@ extension HomeVC:UISearchBarDelegate{
     func filterForSearchTextAndScopeButton(searchText:String) {
         
         homeCollection.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
-        
-        if searchText != ""{
-            homeViewModel?.searchKey = searchText
-            homeViewModel?.appendGroupOfMedicines()
-        }
+        homeViewModel?.searchKey = searchText
     }
     
     

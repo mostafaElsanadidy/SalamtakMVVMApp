@@ -27,6 +27,7 @@ extension UIViewController: NVActivityIndicatorViewable{
                     vc.okBtnTitle = "Go"}
             }
         } else {
+            
             if title == "no internet connection"{
                 vc.alert_Title = "lost connections"
                 vc.alert_Body = body

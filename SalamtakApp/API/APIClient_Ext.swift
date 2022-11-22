@@ -12,14 +12,7 @@ extension APIClient {
     
     // MARK: - Get Error
     static func getError(json:JSON) -> String {
-//        if   json["error"].count >= 1   {
-//            let error = json["error"][0].stringValue
-//            DispatchQueue.main.async {
-//
-//                //                ad.CurrentRootVC()?.showSimpleDAlert(subTitle: error, type: .error, autoDismiss: true)
-//            }
-//            return error
-//        }else
+
         if let succes = json["Success"].bool {
             
             return succes ? "Done!".localized : "Failed".localized

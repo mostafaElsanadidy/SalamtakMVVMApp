@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -30,34 +29,14 @@
                     </constraints>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="3lt-k4-doG">
-                    <rect key="frame" x="0.0" y="140" width="414" height="831"/>
+                    <rect key="frame" x="0.0" y="140" width="414" height="756"/>
                     <subviews>
-                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0c9-Ny-PXy">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
-                            <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YTr-ci-92L">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="50" id="WjF-RC-DfF"/>
-                                    </constraints>
-                                </view>
-                            </subviews>
-                            <constraints>
-                                <constraint firstItem="YTr-ci-92L" firstAttribute="centerY" secondItem="0c9-Ny-PXy" secondAttribute="centerY" id="82L-lw-d0I"/>
-                                <constraint firstItem="YTr-ci-92L" firstAttribute="centerX" secondItem="0c9-Ny-PXy" secondAttribute="centerX" id="NUT-TG-CIV"/>
-                                <constraint firstAttribute="trailing" secondItem="YTr-ci-92L" secondAttribute="trailing" id="OLK-Ku-5Bj"/>
-                                <constraint firstItem="YTr-ci-92L" firstAttribute="leading" secondItem="0c9-Ny-PXy" secondAttribute="leading" id="aM6-kK-1ib"/>
-                                <constraint firstAttribute="bottom" secondItem="YTr-ci-92L" secondAttribute="bottom" id="dzo-QB-cCa"/>
-                                <constraint firstItem="YTr-ci-92L" firstAttribute="top" secondItem="0c9-Ny-PXy" secondAttribute="top" id="ham-ls-D0P"/>
-                            </constraints>
-                        </scrollView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c9t-5C-26o" customClass="UIViewX" customModule="SalamtakApp" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="75" width="414" height="756"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
                             <subviews>
                                 <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="OaV-hi-KCs">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                    <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EpR-1K-JAe">
                                         <size key="itemSize" width="128" height="128"/>
                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -81,7 +60,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Bx-T8-l4s" customClass="UIViewX" customModule="SalamtakApp" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="831" width="414" height="50"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Qiy-8O-z2X">
                                     <rect key="frame" x="20" y="0.0" width="374" height="50"/>
@@ -151,11 +130,5 @@
     </objects>
     <resources>
         <image name="cart.fill" catalog="system" width="128" height="102"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>

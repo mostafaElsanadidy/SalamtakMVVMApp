@@ -11,20 +11,7 @@ import NVActivityIndicatorView
 
 
 extension UIViewController{
-    
-//   func showAlert(title:String , message : String) {
-//       let alert = UIAlertController(title: title.localized, message: message.localized, preferredStyle: UIAlertController.Style.alert)
-//        alert.addAction(UIAlertAction(title: "ok".localized, style: UIAlertAction.Style.default, handler: nil))
-//        self.present(alert, animated: true, completion: nil)
-//      }
-    
-//    func showAlert() {
-////        let alert = UIAlertController(title: "Warning!".localized, message: "Connection Server Failed".localized, preferredStyle: UIAlertController.Style.alert)
-////           alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: nil))
-////           self.present(alert, animated: true, completion: nil)
-//        showAlertAndBack(title: "Warning!".localized, message: "Connection Server Failed".localized, preferredStyle: UIAlertController.Style.alert)
-//       }
-    
+ 
     func showAlertAndBack(title:String, message:String,isReturnToPreviousScreen:Bool = true,completion:((UIAlertAction) -> Void)? = nil){
         let alertController = UIAlertController(title: title.localized, message: message.localized, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK".localized, style: UIAlertAction.Style.default) {
@@ -38,17 +25,7 @@ extension UIViewController{
         alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil)
     }
-//
-//    func showAlertPOP(title:String, message:String){
-//         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-//         let okAction = UIAlertAction(title: "OK".localized, style: UIAlertAction.Style.default) {
-//             UIAlertAction in
-//             self.dismiss(animated: true, completion: nil)
-//
-//             NSLog("OK Pressed")}
-//         alertController.addAction(okAction)
-//         self.present(alertController, animated: true, completion: nil)
-//     }
+
     
     func goTo (identifier : String) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -78,25 +55,6 @@ extension UIViewController{
     self.navigationController?.popViewController(animated: true)
     }
     
-   
-    
-//    func loading(activityIndicatorView: inout NVActivityIndicatorView?){
-//        let color = UIColor(red: 52/255.0, green: 87/255.0, blue: 183/255.0, alpha: 1.0)
-//       let boxWidth: CGFloat = 96
-//       let boxHeight: CGFloat = 96
-//       let boxRect = CGRect(
-//        x: round((self.view.bounds.size.width - boxWidth) / 2),
-//        y: round((self.view.bounds.size.height - boxHeight) / 2),
-//       width: boxWidth,
-//       height: boxHeight)
-//       activityIndicatorView = NVActivityIndicatorView.init(frame: boxRect, type: .ballTrianglePath, color: color, padding: nil)
-//
-//       activityIndicatorView?.startAnimating()
-//    }
-    
-//    func killLoading(activityIndicatorView: inout NVActivityIndicatorView?){
-//        activityIndicatorView?.stopAnimating()
-//    }
 }
 
 
@@ -113,30 +71,6 @@ extension String {
     var localized: String {
         return NSLocalizedString(self, comment: "")
     }
-    
-//    func isPhone () -> Bool {
-//        if  (self.rangeOfCharacter(from: NSCharacterSet.decimalDigits) == nil) || self.count != 8 {
-//            return false
-//
-//        }else {
-//            return true
-//        }
-//    }
-//
-//
-//    func isValidName(name:String) -> Bool {
-//         let nameRegex = "\\w{4,18}"
-//         let namePredicate = NSPredicate(format:"SELF MATCHES %@", nameRegex)
-//         return namePredicate.evaluate(with: name)
-//     }
-//
-//     func isValidPassword(pass: String) -> Bool {
-//         if pass.count < 8 {
-//             return false
-//         } else {
-//             return true
-//         }
-//     }
 }
 
 extension UIViewController {
